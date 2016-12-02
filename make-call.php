@@ -10,3 +10,7 @@ $code = $_GET['code'];
 $phone = $_GET['phone'];
 
 $result = $RetailToZadarma->makeCallbackToPhone($code, $phone);
+
+echo '<pre>';
+print_r($result);
+echo '</pre>';

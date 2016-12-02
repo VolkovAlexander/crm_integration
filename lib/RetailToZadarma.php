@@ -41,7 +41,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 'zadarma', 'volandkb', true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
                 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
                 [
-                    ['userId' => '8', 'code' => 101]
+                    ['userId' => '8', 'code' => 100],
+                    ['userId' => '9', 'code' => 101]
                 ], [], false, true, true, true, false
             );
             $this->parseResponseFromCrm($result);
