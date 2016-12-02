@@ -53,21 +53,11 @@
       <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="89" column="54" lean-forward="false" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+            <state relative-caret-position="559">
+              <caret line="94" column="77" lean-forward="false" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ApiClient.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="1559" column="22" lean-forward="false" selection-start-line="1559" selection-start-column="22" selection-end-line="1559" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -426,12 +416,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1480572272700</updated>
-      <workItem from="1480572274823" duration="35363000" />
+      <workItem from="1480572274823" duration="35495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35363000" />
+    <option name="totallyTimeSpent" value="35495000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-155" width="1936" height="1056" extended-state="6" />
@@ -562,14 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="1559" column="22" lean-forward="false" selection-start-line="1559" selection-start-column="22" selection-end-line="1559" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="705">
@@ -598,10 +580,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="1564" column="20" lean-forward="false" selection-start-line="1564" selection-start-column="20" selection-end-line="1564" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="89" column="54" lean-forward="false" selection-start-line="89" selection-start-column="54" selection-end-line="89" selection-end-column="54" />
+        <state relative-caret-position="559">
+          <caret line="94" column="77" lean-forward="false" selection-start-line="94" selection-start-column="77" selection-end-line="94" selection-end-column="77" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
           </folding>
