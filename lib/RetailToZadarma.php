@@ -84,6 +84,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $codes = isset($params['internal']) ? [$params['internal']] : [];
 
+                    error_log('ZD_CALLBACK_EVENT_OUT_START: ' . print_r($params));
+
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, 'out', $codes, null
                     );
@@ -91,6 +93,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 case self::ZD_CALLBACK_EVENT_OUT_END:
                     $phone = isset($params['internal']) ? $params['internal'] : null;
                     $codes = isset($params['destination']) ? [$params['destination']] : [];
+
+                    error_log('ZD_CALLBACK_EVENT_OUT_END: ' . print_r($params));
 
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, 'hangup', $codes, null
