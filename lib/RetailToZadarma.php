@@ -101,7 +101,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'result' => $this->zdStatusToCrmStatus($reason),
                                     'duration' => $duration,
                                     'externalId' => $externalId,
-                                    'recordUrl' => $call_record_link
+                                    'recordUrl' => null
                                 ]
                             ]);
                         }
