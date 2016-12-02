@@ -72,12 +72,12 @@ class AbstractZadarmaIntegration
         );
     }
 
-    public function getCallRecord($pbx_call_id, $lifetime = 5184000)
+    public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
     {
         $result = null;
 
         $response = json_decode($this->cZadarma->call('/v1/pbx/record/request/', [
-            'call_id' => null,
+            'call_id' => $call_id,
             'pbx_call_id' => $pbx_call_id,
             'lifetime' => $lifetime
         ], 'get'), true);
