@@ -93,6 +93,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $reason = isset($params['reason']) ? $params['reason'] : null;
                             $pbx_call_id = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
 
+                            $call_record_link = $this->getCallRecord($pbx_call_id);
+                            error_log('LINK: ' . $call_record_link);
+
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
                                     'date' => date('Y-m-d H:i:s', $call_start),
@@ -102,7 +105,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'result' => $this->zdStatusToCrmStatus($reason),
                                     'duration' => $duration,
                                     'externalId' => $externalId,
-                                    'recordUrl' => $this->getCallRecord($pbx_call_id)
+                                    'recordUrl' => $call_record_link
                                 ]
                             ]);
                         }
