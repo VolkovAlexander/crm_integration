@@ -119,7 +119,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'out',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => $this->zdStatusToCrmStatus($params['status_code']),
+                                    'result' => $this->zdStatusToCrmStatus($reason),
                                     'duration' => $duration,
                                     'externalId' => $externalId,
                                     'recordUrl' => null
