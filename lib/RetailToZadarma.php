@@ -121,7 +121,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         if ($response->isSuccessful()) {
             return $response;
         } else {
-            throw new \Exception('Error making request');
+            throw new \Exception('Error making request: ' . print_r($response, true));
         }
     }
 }
