@@ -87,6 +87,16 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         try {
             switch ($params['event']) {
+                case self::ZD_CALLBACK_EVENT_START:
+                    $phone = isset($params['destination']) ? $params['destination'] : null;
+                    $code = isset($params['internal']) ? $params['internal'] : null;
+
+                    if(in_array($code, $internal_codes)) {
+                        $result = $this->cCrm->telephonyCallEvent(
+                            $phone, 'in', [$code], null
+                        );
+                    }
+                    break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
