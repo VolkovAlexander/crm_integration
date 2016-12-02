@@ -91,10 +91,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $duration = isset($params['duration']) ? $params['duration'] : null;
                             $externalId = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
                             $reason = isset($params['reason']) ? $params['reason'] : null;
-                            $pbx_call_id = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
-
-                            $call_record_link = $this->getCallRecord($pbx_call_id);
-                            error_log('LINK: ' . $call_record_link);
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
@@ -136,6 +132,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $duration = isset($params['duration']) ? $params['duration'] : null;
                             $externalId = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
                             $reason = isset($params['reason']) ? $params['reason'] : null;
+                            $pbx_call_id = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
+
+                            $call_record_link = $this->getCallRecord($pbx_call_id);
+                            error_log('LINK: ' . $call_record_link);
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
@@ -146,7 +146,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'result' => $this->zdStatusToCrmStatus($reason),
                                     'duration' => $duration,
                                     'externalId' => $externalId,
-                                    'recordUrl' => null
+                                    'recordUrl' => $call_record_link
                                 ]
                             ]);
                         }
