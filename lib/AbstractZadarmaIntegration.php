@@ -82,7 +82,7 @@ class AbstractZadarmaIntegration
             'lifetime' => $lifetime
         ], 'get'), true);
 
-        error_log('LINK: ' . $response);
+        error_log('LINK: ' . print_r($response, true));
 
         if(!empty($response) && $response['status'] === 'success') {
             $result = isset($response['link']) ? $response['link'] : null;
