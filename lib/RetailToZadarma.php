@@ -78,6 +78,37 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         $phone, 'in', [$code], null
                     );
                     break;
+                case self::ZD_CALLBACK_EVENT_END:
+                    $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
+                    $code = isset($params['internal']) ? $params['internal'] : 100;
+
+                    if(in_array($code, $internal_codes)) {
+                        /** @var \RetailCrm\Response\ApiResponse $result */
+                        $result = $this->cCrm->telephonyCallEvent(
+                            $phone, 'hangup', [$code], null
+                        );
+
+                        if($result->isSuccessful()) {
+                            $call_start = isset($params['call_start']) ? strtotime($params['call_start']) : null;
+                            $duration = isset($params['duration']) ? $params['duration'] : null;
+                            $externalId = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
+                            $reason = isset($params['reason']) ? $params['reason'] : null;
+
+                            $result = $this->cCrm->telephonyCallsUpload([
+                                [
+                                    'date' => date('Y-m-d H:i:s', $call_start),
+                                    'type' => 'in',
+                                    'phone' => $phone,
+                                    'code' => $code,
+                                    'result' => $this->zdStatusToCrmStatus($reason),
+                                    'duration' => $duration,
+                                    'externalId' => $externalId,
+                                    'recordUrl' => null
+                                ]
+                            ]);
+                        }
+                    }
+                    break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
