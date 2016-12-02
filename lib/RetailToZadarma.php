@@ -55,27 +55,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         return $result;
     }
 
-    /**
-     * @param string $phone
-     * @param array $codes
-     * @param string $type
-     * @param string $hangupStatus
-     * @return null|\RetailCrm\Response\ApiResponse
-     */
-    public function sendCallRequestToCrm($phone, $codes, $type = 'in', $hangupStatus = 'answered')
-    {
-        $result = null;
-
-        try {
-            $result = $this->cCrm->telephonyCallEvent($phone, $type, $codes, $hangupStatus);
-            $this->parseResponseFromCrm($result);
-        } catch (\RetailCrm\Exception\CurlException $e) {
-            echo "Send call action error: " . $e->getMessage();
-        }
-
-        return $result;
-    }
-
     public function sendCallEventToCrm($params)
     {
         $result = null;
@@ -93,7 +72,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
-                    $code = isset($params['internal']) ? $params['internal'] : null;
+                    $code = isset($params['internal']) ? $params['internal'] : 100;
 
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, 'in', [$code], null
