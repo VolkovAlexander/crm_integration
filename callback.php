@@ -22,8 +22,11 @@ if ($callStart && ($remoteIp == $config['ip'])) {
     $signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));
 
     if ($signature == $signatureTest) {
-        $RetailToZadarma = new \lib\RetailToZadarma();
-        $RetailToZadarma->sendCallRequestToCrm('+79193188295', [101], 'in');
+
+        error_log(print_r($_POST, true));
+
+        //$RetailToZadarma = new \lib\RetailToZadarma();
+        //$RetailToZadarma->sendCallRequestToCrm('+79193188295', [101], 'in');
     }
 }
 
