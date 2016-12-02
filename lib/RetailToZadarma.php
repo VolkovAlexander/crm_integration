@@ -81,8 +81,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $internal_codes = [];
         $response_data = json_decode($this->cZadarma->call('/v1/pbx/internal/', [], 'GET'), true);
 
-        error_log(print_r($response_data, true));
-
         if(!empty($response_data) && $response_data['status'] === 'success') {
             $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
         }
@@ -93,7 +91,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
 
-                    if(in_array($code, $internal_codes, true)) {
+                    if(in_array($code, $internal_codes)) {
                         error_log('ZD_CALLBACK_EVENT_OUT_START: ' . print_r($params, true));
 
                         $result = $this->cCrm->telephonyCallEvent(
@@ -105,7 +103,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
 
-                    if(in_array($code, $internal_codes, true)) {
+                    if(in_array($code, $internal_codes)) {
                         error_log('ZD_CALLBACK_EVENT_OUT_END: ' . print_r($params, true));
 
                         $result = $this->cCrm->telephonyCallEvent(
