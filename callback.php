@@ -2,8 +2,12 @@
 /**
  * @author Volkov Alexander
  */
+
 /** Проверка для принятия скрипта системой zadarma */
 if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
+
+require 'vendor/autoload.php';
+require 'lib/RetailToZadarma.php';
 
 $config = include 'config/zadarma.php';
 
