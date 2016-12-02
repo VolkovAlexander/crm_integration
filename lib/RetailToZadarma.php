@@ -43,7 +43,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 [
                     ['userId' => '8', 'code' => 100],
                     ['userId' => '9', 'code' => 101]
-                ], [], false, true, true, true, false
+                ], [
+                    ['siteCode' => 'crm-integration-test', 'externalPhone' => '+7-351-277-91-49']
+            ], false, true, true, true, false
             );
             $this->parseResponseFromCrm($result);
         } catch (\RetailCrm\Exception\CurlException $e) {
@@ -84,6 +86,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         if(!empty($response_data) && $response_data['status'] === 'success') {
             $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
         }
+
+        error_log('INPUT: ' . print_r($params, true));
 
         try {
             switch ($params['event']) {
