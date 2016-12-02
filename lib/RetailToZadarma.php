@@ -38,7 +38,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         try {
             $result = $this->cCrm->telephonySettingsEdit(
-                'zadarma', 'volandkb', true, 'Zadarma', 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
+                'zadarma', 'volandkb', true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
                 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
                 [
                     ['userId' => '8', 'code' => 101]
