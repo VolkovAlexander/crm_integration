@@ -72,6 +72,23 @@ class AbstractZadarmaIntegration
         );
     }
 
+    protected function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
+    {
+        $result = null;
+
+        $response = json_decode($this->cZadarma->call('/v1/pbx/record/request/', [
+            'call_id' => $call_id,
+            'pbx_call_id' => $pbx_call_id,
+            'lifetime' => $lifetime
+        ], 'get'), true);
+
+        if(!empty($response) && $response['status'] === 'success') {
+            $result = isset($response['link']) ? $response['link'] : null;
+        }
+
+        return $result;
+    }
+
     protected function initCrmClient() {}
 
     protected function parseRequestFromCrm() {}

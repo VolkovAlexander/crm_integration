@@ -66,8 +66,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
         }
 
-        error_log('INPUT: ' . print_r($params, true));
-
         try {
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
@@ -93,6 +91,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $duration = isset($params['duration']) ? $params['duration'] : null;
                             $externalId = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
                             $reason = isset($params['reason']) ? $params['reason'] : null;
+                            $pbx_call_id = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
@@ -103,7 +102,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'result' => $this->zdStatusToCrmStatus($reason),
                                     'duration' => $duration,
                                     'externalId' => $externalId,
-                                    'recordUrl' => null
+                                    'recordUrl' => $this->getCallRecord(null, $pbx_call_id)
                                 ]
                             ]);
                         }
