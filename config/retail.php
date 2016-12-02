@@ -4,6 +4,6 @@
  */
 
 return [
-    'url' => 'https://test-crm14.retailcrm.ru',
-    'key' => 'bd4WvFAiebzlaCn8RcotKj9Qz91ZawYK'
+    'url' => 'https://crm-integration-test.retailcrm.ru/',
+    'key' => 'b7XseAh7ci2NqMFqWzbzYupUMExfhOOV'
 ];
