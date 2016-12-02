@@ -78,27 +78,38 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     {
         $result = null;
 
+        $internal_codes = [];
+        $response_data = json_decode($this->cZadarma->call('/v1/pbx/internal/', [], 'GET'));
+
+        if(!empty($response_data) && $response_data['success'] === true) {
+            $internal_codes = isset($response_data['numbers']) ? $response_data['numbers'] : [];
+        }
+
         try {
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = isset($params['destination']) ? $params['destination'] : null;
-                    $codes = isset($params['internal']) ? [$params['internal']] : [];
+                    $code = isset($params['internal']) ? $params['internal'] : null;
 
-                    error_log('ZD_CALLBACK_EVENT_OUT_START: ' . print_r($params, true));
+                    if(in_array($code, $internal_codes, true)) {
+                        error_log('ZD_CALLBACK_EVENT_OUT_START: ' . print_r($params, true));
 
-                    $result = $this->cCrm->telephonyCallEvent(
-                        $phone, 'out', $codes, null
-                    );
+                        $result = $this->cCrm->telephonyCallEvent(
+                            $phone, 'out', [$code], null
+                        );
+                    }
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_END:
-                    $phone = isset($params['internal']) ? $params['internal'] : null;
-                    $codes = isset($params['destination']) ? [$params['destination']] : [];
+                    $phone = isset($params['destination']) ? $params['destination'] : null;
+                    $code = isset($params['internal']) ? $params['internal'] : null;
 
-                    error_log('ZD_CALLBACK_EVENT_OUT_END: ' . print_r($params, true));
+                    if(in_array($code, $internal_codes, true)) {
+                        error_log('ZD_CALLBACK_EVENT_OUT_END: ' . print_r($params, true));
 
-                    $result = $this->cCrm->telephonyCallEvent(
-                        $phone, 'hangup', $codes, null
-                    );
+                        $result = $this->cCrm->telephonyCallEvent(
+                            $phone, 'hangup', [$code], null
+                        );
+                    }
                     break;
                 default:
                     break;
