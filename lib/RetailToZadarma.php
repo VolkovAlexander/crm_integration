@@ -66,6 +66,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
         }
 
+        error_log('INPUT: ' . print_r($params));
+
         try {
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:

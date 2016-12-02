@@ -72,7 +72,7 @@ class AbstractZadarmaIntegration
         );
     }
 
-    protected function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
+    public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
     {
         $result = null;
 
@@ -82,7 +82,7 @@ class AbstractZadarmaIntegration
             'lifetime' => $lifetime
         ], 'get'), true);
 
-        error_log('GET RECORD: ' . print_r($response, true));
+        print_r($response);
 
         if(!empty($response) && $response['status'] === 'success') {
             $result = isset($response['link']) ? $response['link'] : null;
