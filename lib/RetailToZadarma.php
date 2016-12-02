@@ -74,6 +74,43 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         return $result;
     }
 
+    public function sendCallEventToCrm($params)
+    {
+        $result = null;
+
+        try {
+            switch ($params['event']) {
+                case self::ZD_CALLBACK_EVENT_OUT_START:
+                    $phone = isset($params['destination']) ? $params['destination'] : null;
+                    $codes = isset($params['internal']) ? [$params['internal']] : [];
+
+                    $result = $this->cCrm->telephonyCallEvent(
+                        $phone, 'in', $codes, null
+                    );
+                    break;
+                case self::ZD_CALLBACK_EVENT_OUT_END:
+                    $phone = isset($params['destination']) ? $params['destination'] : null;
+                    $codes = isset($params['internal']) ? [$params['internal']] : [];
+
+                    $result = $this->cCrm->telephonyCallEvent(
+                        $phone, 'out', $codes, null
+                    );
+                    break;
+                default:
+                    break;
+            }
+        } catch (\Exception $e) {
+            echo 'Can\'t parse input data';
+        }
+
+
+        if(!empty($result)) {
+            $this->parseResponseFromCrm($result);
+        }
+
+        return $result;
+    }
+
     /**
      * @param \RetailCrm\Response\ApiResponse $response
      * @return \RetailCrm\Response\ApiResponse

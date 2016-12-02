@@ -75,4 +75,10 @@ class AbstractZadarmaIntegration
     protected function initCrmClient() {}
 
     protected function parseRequestFromCrm() {}
+
+    const ZD_CALLBACK_EVENT_START = 'NOTIFY_START';
+    const ZD_CALLBACK_EVENT_INTERNAL = 'NOTIFY_INTERNAL';
+    const ZD_CALLBACK_EVENT_END = 'NOTIFY_END';
+    const ZD_CALLBACK_EVENT_OUT_START = 'NOTIFY_OUT_START';
+    const ZD_CALLBACK_EVENT_OUT_END = 'NOTIFY_OUT_END';
 }
