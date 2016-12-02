@@ -22,10 +22,12 @@ class AbstractZadarmaIntegration
      */
     public function __construct()
     {
-        $this->zadarma_config = include '/config/zadarma.php';
+        define('ROOT_DIR', sprintf('%s/./../', __DIR__));
+
+        $this->zadarma_config = include ROOT_DIR . '/config/zadarma.php';
 
         $crm_config_file = sprintf('/config/%s.php', $this->crm_name);
-        $crm_config_file_full_path = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/./../%s', __DIR__, $crm_config_file));
+        $crm_config_file_full_path = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/%s', ROOT_DIR, $crm_config_file));
 
         if(file_exists($crm_config_file_full_path)) {
             $this->crm_config = include $crm_config_file;
@@ -52,7 +54,7 @@ class AbstractZadarmaIntegration
         $result = null;
 
         try {
-            $reuslt = $this->cZadarma->call('/v1/request/callback/', [
+            $result = $this->cZadarma->call('/v1/request/callback/', [
                 'from' => $from,
                 'to' => $to,
                 'sip' => $sip,
