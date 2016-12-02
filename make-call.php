@@ -5,9 +5,9 @@ require 'lib/RetailToZadarma.php';
 
 $RetailToZadarma = new \lib\RetailToZadarma();
 
-$clientId = $_GET['clientId'];
-$code = $_GET['code'];
-$phone = $_GET['phone'];
+$clientId = (string)$_GET['clientId'];
+$code = (string)$_GET['code'];
+$phone = sprintf('+%s', str_replace(' ', '', $_GET['phone']));
 
 $result = $RetailToZadarma->makeCallbackToPhone($code, $phone);
 
