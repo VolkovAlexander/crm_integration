@@ -2,10 +2,10 @@
 /**
  * @author Volkov Alexander
  */
+/** Проверка для принятия скрипта системой zadarma */
+if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
 
 $config = include 'config/zadarma.php';
-
-if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
 
 $remoteIp = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
 $callerId = filter_input(INPUT_POST, 'caller_id'); // number of calling party;
@@ -18,16 +18,7 @@ if ($callStart && ($remoteIp == $config['ip'])) {
     $signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));
 
     if ($signature == $signatureTest) {
-        $params = $_GET;
-        // Do your actions
-        /*
-        // For each request you can easily change work scenario for current call by sending in response on information:
-        echo json_encode(array(
-            'redirect' => 1,
-            'caller_name' => 'TestName'
-        ));
-        exit();
-        */
+        $RetailToZadarma->sendCallRequestToCrm('+79193188295', [101], 'in');
     }
 }
 
