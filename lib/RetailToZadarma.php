@@ -81,8 +81,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $internal_codes = [];
         $response_data = json_decode($this->cZadarma->call('/v1/pbx/internal/', [], 'GET'));
 
-        if(!empty($response_data) && $response_data['success'] === true) {
-            $internal_codes = isset($response_data['numbers']) ? $response_data['numbers'] : [];
+        if(!empty($response_data) && $response_data->success === true) {
+            $internal_codes = isset($response_data->numbers) ? $response_data->numbers : [];
         }
 
         try {
