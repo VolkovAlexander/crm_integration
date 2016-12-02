@@ -66,7 +66,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
         }
 
-        error_log('INPUT: ' . print_r($params));
+        error_log('INPUT: ' . print_r($params, true));
 
         try {
             switch ($params['event']) {
