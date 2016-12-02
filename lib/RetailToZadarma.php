@@ -92,8 +92,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = isset($params['internal']) ? $params['internal'] : null;
 
                     if(in_array($code, $internal_codes)) {
-                        error_log('ZD_CALLBACK_EVENT_OUT_START: ' . print_r($params, true));
-
                         $result = $this->cCrm->telephonyCallEvent(
                             $phone, 'out', [$code], null
                         );
@@ -104,11 +102,30 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = isset($params['internal']) ? $params['internal'] : null;
 
                     if(in_array($code, $internal_codes)) {
-                        error_log('ZD_CALLBACK_EVENT_OUT_END: ' . print_r($params, true));
-
+                        /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
                             $phone, 'hangup', [$code], null
                         );
+
+                        if($result->isSuccessful()) {
+                            $call_start = isset($params['call_start']) ? strtotime($params['call_start']) : null;
+                            $duration = isset($params['duration']) ? $params['duration'] : null;
+                            $externalId = isset($params['pbx_call_id']) ? $params['pbx_call_id'] : null;
+                            $reason = isset($params['reason']) ? $params['reason'] : null;
+
+                            $result = $this->cCrm->telephonyCallsUpload([
+                                [
+                                    'date' => date('Y-m-d H:i:s', $call_start),
+                                    'type' => 'out',
+                                    'phone' => $phone,
+                                    'code' => $code,
+                                    'result' => $this->zdStatusToCrmStatus($params['status_code']),
+                                    'duration' => $duration,
+                                    'externalId' => $externalId,
+                                    'recordUrl' => null
+                                ]
+                            ]);
+                        }
                     }
                     break;
                 default:
@@ -138,5 +155,17 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         } else {
             throw new \Exception('Error making request: ' . print_r($response, true));
         }
+    }
+
+    protected function zdStatusToCrmStatus($input_status = null)
+    {
+        $statuses = [
+            'CANCEL' => 'failed',
+            'ANSWER' => 'answered',
+            'BUSY' => 'busy',
+            'NOANSWER' => 'no answer',
+        ];
+
+        return empty($input_status) ? 'unknown' : (isset($statuses[$input_status]) ? $statuses[$input_status] : 'unknown');
     }
 }
