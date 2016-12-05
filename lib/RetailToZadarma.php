@@ -29,13 +29,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $this->crm_config['key']
         );
 
-        try {
-            $test_response = $this->cCrm->usersList();
-            $this->validateCrmResponse($test_response);
-        } catch (\Exception $e) {
-            throw new \Exception('Can\'t initialize CRM client');
-        }
-
         parent::initCrmClient();
     }
 

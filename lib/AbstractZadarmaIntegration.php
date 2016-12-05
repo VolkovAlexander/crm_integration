@@ -31,9 +31,11 @@ class AbstractZadarmaIntegration
 
         $this->zadarma_config = include ROOT_DIR . '/config/zadarma.php';
         $crm_config_file = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/config/%s.php', ROOT_DIR, $this->crm_name));
+
         if(file_exists($crm_config_file)) {
             $this->crm_config = include $crm_config_file;
         } else throw new \Exception(sprintf('Configuration file for "%s" not found', $this->crm_name));
+
         try {
             $this->initZadarmaClient();
             $this->initCrmClient();
