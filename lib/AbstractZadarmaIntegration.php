@@ -10,6 +10,8 @@ require_once 'Log.php';
 
 class AbstractZadarmaIntegration
 {
+    protected $crm_name = null;
+
     protected $zadarma_config = [];
     protected $crm_config = [];
 
@@ -23,7 +25,7 @@ class AbstractZadarmaIntegration
     /**
      * @inheritdoc
      */
-    public function __construct($zd_config = [], $crm_config = [])
+    public function __construct()
     {
         define('ROOT_DIR', sprintf('%s/./../', __DIR__));
 
