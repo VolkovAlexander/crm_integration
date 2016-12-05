@@ -11,7 +11,7 @@ namespace lib;
 
 class Log
 {
-    public $log_file = __DIR__ . './../log.data';
+    public $log_file = __DIR__ . '/./../log.data';
 
     public function __construct()
     {
