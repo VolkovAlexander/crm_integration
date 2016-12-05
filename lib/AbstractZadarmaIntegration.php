@@ -6,6 +6,8 @@
 
 namespace lib;
 
+require_once 'Log.php';
+
 class AbstractZadarmaIntegration
 {
     protected $crm_name = null;
@@ -16,6 +18,9 @@ class AbstractZadarmaIntegration
     public $cCrm = null;
     /** @var \Zadarma_API\Client|null  */
     public $cZadarma = null;
+
+    /** @var  Log $Log */
+    public $Log;
 
     /**
      * @inheritdoc
@@ -34,6 +39,7 @@ class AbstractZadarmaIntegration
         try {
             $this->initZadarmaClient();
             $this->initCrmClient();
+            $this->Log = new Log();
         } catch (\Exception $e) {
             throw new \Exception('Can\'t initialize api-clients');
         }
@@ -58,11 +64,51 @@ class AbstractZadarmaIntegration
                 'sip' => $sip,
                 'predicted' => $predicted
             ]);
+
+            $this->validateZdResponse($result);
+
+            $this->Log->notice(sprintf('New output calling from %s to %s', $from, $to));
         } catch (\Exception $e) {
-            echo 'Error callback';
+            $this->Log->error(sprintf('Failed output calling from %s to %s (%s)', $from, $to, $e->getMessage()));
         }
 
         return $result;
+    }
+
+    public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
+    {
+        $result = null;
+
+        try {
+            $response = $this->cZadarma->call('/v1/pbx/record/request/', [
+                'call_id' => $call_id,
+                'pbx_call_id' => $pbx_call_id,
+                'lifetime' => $lifetime
+            ], 'get');
+
+            $this->validateZdResponse($response);
+
+            $response = json_decode($response, true);
+            if(!empty($response) && $response['status'] === 'success') {
+                $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
+            }
+        } catch (\Exception $e) {
+            $this->Log->error(sprintf('Can\'t get call record (%s)', $e->getMessage()));
+        }
+
+
+        return $result;
+    }
+
+    protected function validateZdResponse($response)
+    {
+        $data = json_decode($response, true);
+
+        if($data['status'] !== 'success') {
+            throw new \Exception($data['message']);
+        }
+
+        return true;
     }
 
     protected function initZadarmaClient()
@@ -70,23 +116,6 @@ class AbstractZadarmaIntegration
         $this->cZadarma = new \Zadarma_API\Client(
             $this->zadarma_config['key'], $this->zadarma_config['secret']
         );
-    }
-
-    public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
-    {
-        $result = null;
-
-        $response = json_decode($this->cZadarma->call('/v1/pbx/record/request/', [
-            'call_id' => $call_id,
-            'pbx_call_id' => $pbx_call_id,
-            'lifetime' => $lifetime
-        ], 'get'), true);
-
-        if(!empty($response) && $response['status'] === 'success') {
-            $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
-        }
-
-        return $result;
     }
 
     protected function initCrmClient() {}

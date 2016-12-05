@@ -12,9 +12,9 @@ require 'lib/RetailToZadarma.php';
 $config = include 'config/zadarma.php';
 
 $remoteIp = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
-$callerId = filter_input(INPUT_POST, 'caller_id'); // number of calling party;
-$calledDid = filter_input(INPUT_POST, 'called_did'); // number of called party;
-$callStart = filter_input(INPUT_POST, 'call_start'); // start time of call
+$callerId = filter_input(INPUT_POST, 'caller_id');
+$calledDid = filter_input(INPUT_POST, 'called_did');
+$callStart = filter_input(INPUT_POST, 'call_start');
 
 if ($callStart && ($remoteIp == $config['ip'])) {
 
