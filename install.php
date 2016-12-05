@@ -45,8 +45,6 @@ if (!empty($url) && !empty($api_code) && !empty($zd_key) && !empty($zd_secret)) 
             ];
         }
 
-
-
         foreach ($shops_to_phones as $shop_name => $external_phone) {
             $externalPhones[] = [
                 'siteCode' => $shop_name, 'externalPhone' => $external_phone
@@ -57,7 +55,7 @@ if (!empty($url) && !empty($api_code) && !empty($zd_key) && !empty($zd_secret)) 
             $additionalCodes, $externalPhones
         );
 
-        if($save_result) {
+        if ($save_result) {
             die('Телефония Zadarma успешно была интегрирована в Ваш аккаунт RetailCRM');
         }
     }

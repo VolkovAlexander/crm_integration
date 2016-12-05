@@ -6,8 +6,6 @@
 
 namespace lib;
 
-use RetailCrm\ApiClient;
-
 require_once 'AbstractZadarmaIntegration.php';
 
 /**
@@ -83,7 +81,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
-                    $code = isset($params['internal']) ? $params['internal'] : 100;
+                    $code = null;
+
+                    $manager_response = $this->cCrm->telephonyCallManager($phone, 0);
+                    if($manager_response->isSuccessful()) {
+                        $code = $manager_response['manager']['code'];
+                    }
+                    
                     $type = 'in';
 
                     $result = $this->cCrm->telephonyCallEvent(
@@ -92,7 +96,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     break;
                 case self::ZD_CALLBACK_EVENT_END:
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
-                    $code = isset($params['internal']) ? $params['internal'] : 100;
+                    $code = isset($params['internal']) ? $params['internal'] : null;
                     $type = 'hangup';
 
                     if (in_array($code, $internal_codes)) {
