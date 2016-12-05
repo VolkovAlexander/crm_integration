@@ -159,11 +159,11 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             }
 
             $this->validateCrmResponse($result);
-            $this->Log->notice(sprintf('New call event recorded<pre>%s</pre>', [
+            $this->Log->notice(sprintf('New call event recorded<pre>%s</pre>', print_r([
                 'type' => 'in',
                 'from' => 'from',
                 'to' => 'to',
-            ]));
+            ], true)));
         } catch (\Exception $e) {
             $this->Log->error(sprintf('Can\'t send information about incoming call to crm (%s)', $e->getMessage()));
         }
