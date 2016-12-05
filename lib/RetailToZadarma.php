@@ -61,31 +61,37 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     {
         $result = null;
 
-        try {
-            $internal_codes = [];
-            $response_data = json_decode($this->cZadarma->call('/v1/pbx/internal/', [], 'GET'), true);
+        $phone = null;
+        $code = null;
+        $type = null;
 
-            if (!empty($response_data) && $response_data['status'] === 'success') {
-                $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
-            }
+        try {
+            $response_data = $this->cZadarma->call('/v1/pbx/internal/', [], 'GET');
+
+            $this->validateZdResponse($response_data);
+
+            $response_data = json_decode($response_data, true);
+            $internal_codes = isset($response_data['numbers']) ? array_values($response_data['numbers']) : [];
 
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : 100;
+                    $type = 'in';
 
                     $result = $this->cCrm->telephonyCallEvent(
-                        $phone, 'in', [$code], null
+                        $phone, $type, [$code], null
                     );
                     break;
                 case self::ZD_CALLBACK_EVENT_END:
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : 100;
+                    $type = 'hangup';
 
                     if (in_array($code, $internal_codes)) {
                         /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
-                            $phone, 'hangup', [$code], null
+                            $phone, $type, [$code], null
                         );
 
                         if ($result->isSuccessful()) {
@@ -112,21 +118,23 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
+                    $type = 'out';
 
                     if (in_array($code, $internal_codes)) {
                         $result = $this->cCrm->telephonyCallEvent(
-                            $phone, 'out', [$code], null
+                            $phone, $type, [$code], null
                         );
                     }
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_END:
                     $phone = isset($params['destination']) ? $params['destination'] : null;
                     $code = isset($params['internal']) ? $params['internal'] : null;
+                    $type = 'hangup';
 
                     if (in_array($code, $internal_codes)) {
                         /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
-                            $phone, 'hangup', [$code], null
+                            $phone, $type, [$code], null
                         );
 
                         if ($result->isSuccessful()) {
@@ -160,9 +168,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
             $this->validateCrmResponse($result);
             $this->Log->notice(sprintf('New call event recorded<pre>%s</pre>', print_r([
-                'type' => 'in',
-                'from' => 'from',
-                'to' => 'to',
+                'type' => $type,
+                'phone' => $phone,
+                'code' => $code,
             ], true)));
         } catch (\Exception $e) {
             $this->Log->error(sprintf('Can\'t send information about incoming call to crm (%s)', $e->getMessage()));
