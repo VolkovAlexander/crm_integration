@@ -11,10 +11,12 @@ namespace lib;
 
 class Log
 {
-    public $log_file = __DIR__ . '/./../log.data';
+    public $log_file = 'log.data';
 
     public function __construct()
     {
+        $this->log_file = __DIR__ . '/./../' . $this->log_file;
+
         if (!file_exists($this->log_file)) {
             fopen($this->log_file, 'wb');
 
@@ -49,8 +51,6 @@ class Log
                 } catch (\Exception $e) {
                     die('Can\'t logging events');
                 }
-                break;
-            case 'mysql':
                 break;
             default:
                 break;
