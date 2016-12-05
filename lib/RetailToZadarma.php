@@ -79,13 +79,24 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         $code = isset($manager_response['manager']) ? $manager_response['manager']['code'] : null;
                     }
 
+                    $codes = [];
+
                     if(empty($code)) {
                         $response = $this->cCrm->telephonySettingsGet('zadarma');
-                        $this->Log->notice(print_r($response, true));
-                        $codes = [];
+                        $this->validateCrmResponse($response);
+
+                        $internal_codes = isset($response['configuration']['additionalCodes']) ? $response['configuration']['additionalCodes'] : [];
+
+                        if(!empty($internal_codes)) {
+                            foreach($internal_codes as $internal_code) {
+                                $codes[] = $internal_code['code'];
+                            }
+                        }
                     } else {
                         $codes = [$code];
                     }
+
+                    $this->Log->notice(print_r($codes, true));
 
                     $type = 'in';
 
