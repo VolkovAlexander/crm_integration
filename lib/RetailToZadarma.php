@@ -87,7 +87,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     if($manager_response->isSuccessful()) {
                         $code = $manager_response['manager']['code'];
                     }
-                    
+
                     $type = 'in';
 
                     $result = $this->cCrm->telephonyCallEvent(
