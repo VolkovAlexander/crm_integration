@@ -92,7 +92,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                 $response_user = $this->cCrm->usersGet($internal_code['userId']);
                                 $this->validateCrmResponse($response_user);
 
-                                $user = isset($response_user['user']) ? $response['user'] : null;
+                                $user = isset($response_user['user']) ? $response_user['user'] : null;
 
                                 if(!empty($user) && $user['isManager'] === true && $user['status'] === 'free' && $user['online'] === true) {
                                     $codes[] = $internal_code['code'];
