@@ -42,23 +42,21 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     public function registrateSipInCrm($manager_codes = [], $shop_phones = [])
     {
         $result = null;
-
         try {
             $result = $this->cCrm->telephonySettingsEdit(
-                'zadarma', md5($this->crm_config['url']), true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
+                'zadarma', 'volandkb', true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
                 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
-                $manager_codes, $shop_phones, true, true, true, true, false
+                [
+                    ['userId' => '8', 'code' => 100],
+                    ['userId' => '9', 'code' => 101]
+                ], [
+                ['siteCode' => 'crm-integration-test', 'externalPhone' => '+7-351-277-91-49']
+            ], true, true, true, true, false
             );
-
-            $this->validateCrmResponse($result);
-            $this->Log->notice(sprintf('Success new crm integration'));
-            $result = true;
-
-        } catch (\Exception $e) {
-            $this->Log->error(sprintf('Failed new crm integration (%s)', $e->getMessage()));
-            $result = false;
+            $this->parseResponseFromCrm($result);
+        } catch (\RetailCrm\Exception\CurlException $e) {
+            echo "Registration action error: " . $e->getMessage();
         }
-
         return $result;
     }
 
@@ -84,7 +82,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = null;
 
                     $manager_response = $this->cCrm->telephonyCallManager($phone, 0);
-                    if($manager_response->isSuccessful()) {
+                    if ($manager_response->isSuccessful()) {
                         $code = $manager_response['manager']['code'];
                     }
 
@@ -195,14 +193,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     }
 
 
-
     public function validateCallbackParams($params)
     {
         $clientId = isset($params['clientId']) ? $params['clientId'] : null;
         $code = isset($params['code']) ? $params['code'] : null;
         $phone = isset($params['phone']) ? $params['phone'] : null;
 
-        if(empty($clientId) || empty($code) || empty($phone)) {
+        if (empty($clientId) || empty($code) || empty($phone)) {
             $this->Log->error(sprintf('Can\'t make phone callback, to few params'));
             return null;
         }
@@ -219,7 +216,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             return null;
         }
 
-        if(!in_array($code, $internal_codes)) {
+        if (!in_array($code, $internal_codes)) {
             $this->Log->error(sprintf('Can\'t get codes from zadarma'));
             return null;
         }
