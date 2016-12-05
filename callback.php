@@ -18,10 +18,11 @@ define('ZD_IP', '185.45.152.42');
 
 if ($callStart && ($remoteIp == ZD_IP)) {
 
-    $signature = getHeader('Signature');  // Signature is send only if you have your API key and secret
+    //$signature = getHeader('Signature');  // Signature is send only if you have your API key and secret
     //$signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));
 
     //if ($signature == $signatureTest) {
+        error_log('ON CALLBACK');
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
     //}
