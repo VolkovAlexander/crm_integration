@@ -64,7 +64,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
     public function sendCallEventToCrm($params)
     {
-        error_log(print_r($params, true));
         $result = null;
 
         $phone = null;
