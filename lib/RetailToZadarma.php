@@ -64,6 +64,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
     public function sendCallEventToCrm($params)
     {
+        error_log(print_r($params, true));
         $result = null;
 
         $phone = null;
@@ -89,8 +90,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     }
 
                     $type = 'in';
-
-                    error_log($phone . ' ' . $code . ' ' . $type);
 
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, $type, [$code], null
