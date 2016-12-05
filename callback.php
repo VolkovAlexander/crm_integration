@@ -16,7 +16,9 @@ $callerId = filter_input(INPUT_POST, 'caller_id');
 $calledDid = filter_input(INPUT_POST, 'called_did');
 $callStart = filter_input(INPUT_POST, 'call_start');
 
-if ($callStart && ($remoteIp == $config['ip'])) {
+define('ZD_IP', '185.45.152.42');
+
+if ($callStart && ($remoteIp == ZD_IP)) {
 
     $signature = getHeader('Signature');  // Signature is send only if you have your API key and secret
     $signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));

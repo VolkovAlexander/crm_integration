@@ -6,6 +6,8 @@
 
 namespace lib;
 
+use RetailCrm\ApiClient;
+
 require_once 'AbstractZadarmaIntegration.php';
 
 /**
@@ -29,29 +31,34 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $this->crm_config['key']
         );
 
+        try {
+            $test_response = $this->cCrm->usersList();
+            $this->validateCrmResponse($test_response);
+        } catch (\Exception $e) {
+            throw new \Exception('Can\'t initialize CRM client');
+        }
+
         parent::initCrmClient();
     }
 
-    public function registrateSipInCrm()
+    public function registrateSipInCrm($manager_codes = [], $shop_phones = [])
     {
         $result = null;
 
         try {
             $result = $this->cCrm->telephonySettingsEdit(
-                'zadarma', 'volandkb', true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
+                'zadarma', md5($this->crm_config['url']), true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
                 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
-                [
-                    ['userId' => '8', 'code' => 100],
-                    ['userId' => '9', 'code' => 101]
-                ], [
-                ['siteCode' => 'crm-integration-test', 'externalPhone' => '+7-351-277-91-49']
-            ], false, true, true, true, false
+                $manager_codes, $shop_phones, true, true, true, true, false
             );
 
             $this->validateCrmResponse($result);
             $this->Log->notice(sprintf('Success new crm integration'));
-        } catch (\RetailCrm\Exception\CurlException $e) {
+            $result = true;
+
+        } catch (\Exception $e) {
             $this->Log->error(sprintf('Failed new crm integration (%s)', $e->getMessage()));
+            $result = false;
         }
 
         return $result;
@@ -224,10 +231,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
      *
      * @return bool
      */
-    protected function validateCrmResponse($response)
+    public function validateCrmResponse($response)
     {
         if (!$response->isSuccessful()) {
-            throw new \Exception($response);
+            throw new \Exception('Failed request to CRM');
         }
 
         return true;

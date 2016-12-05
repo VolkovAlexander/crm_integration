@@ -10,8 +10,6 @@ require_once 'Log.php';
 
 class AbstractZadarmaIntegration
 {
-    protected $crm_name = null;
-
     protected $zadarma_config = [];
     protected $crm_config = [];
 
@@ -25,16 +23,10 @@ class AbstractZadarmaIntegration
     /**
      * @inheritdoc
      */
-    public function __construct()
+    public function __construct($zd_config = [], $crm_config = [])
     {
-        define('ROOT_DIR', sprintf('%s/./../', __DIR__));
-
-        $this->zadarma_config = include ROOT_DIR . '/config/zadarma.php';
-        $crm_config_file = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/config/%s.php', ROOT_DIR, $this->crm_name));
-
-        if(file_exists($crm_config_file)) {
-            $this->crm_config = include $crm_config_file;
-        } else throw new \Exception(sprintf('Configuration file for "%s" not found', $this->crm_name));
+        $this->zadarma_config = $zd_config;
+        $this->crm_config = $crm_config;
 
         try {
             $this->initZadarmaClient();
@@ -100,7 +92,7 @@ class AbstractZadarmaIntegration
         return $result;
     }
 
-    protected function validateZdResponse($response)
+    public function validateZdResponse($response)
     {
         $data = json_decode($response, true);
 
