@@ -23,6 +23,7 @@ if ($callStart && ($remoteIp == ZD_IP)) {
 
     //if ($signature == $signatureTest) {
     error_log(print_r($_POST, true));
+    error_log(print_r(getallheaders(), true));
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
     //}
