@@ -32,7 +32,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         parent::initCrmClient();
     }
 
-    public function registrateSipInCrm($manager_codes = [], $shop_phones = [])
+    public function registrateSipInCrm()
     {
         $result = null;
         try {
@@ -46,7 +46,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 ['siteCode' => 'crm-integration-test', 'externalPhone' => '+7-351-277-91-49']
             ], true, true, true, true, false
             );
-            $this->parseResponseFromCrm($result);
+            $this->validateCrmResponse($result);
         } catch (\RetailCrm\Exception\CurlException $e) {
             echo "Registration action error: " . $e->getMessage();
         }

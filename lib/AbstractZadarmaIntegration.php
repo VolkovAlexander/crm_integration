@@ -36,6 +36,9 @@ class AbstractZadarmaIntegration
             $this->crm_config = include $crm_config_file;
         } else throw new \Exception(sprintf('Configuration file for "%s" not found', $this->crm_name));
 
+        error_log(print_r($this->zadarma_config, true));
+        error_log(print_r($this->crm_config, true));
+
         try {
             $this->initZadarmaClient();
             $this->initCrmClient();
