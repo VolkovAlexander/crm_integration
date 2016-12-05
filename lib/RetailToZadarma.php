@@ -89,6 +89,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                         if(!empty($internal_codes)) {
                             foreach($internal_codes as $internal_code) {
+                                $response_user = $this->cCrm->usersGet($internal_code['userId']);
+                                $this->validateCrmResponse($response_user);
+
+                                $this->Log->notice(print_r($response_user, true));
                                 $codes[] = $internal_code['code'];
                             }
                         }
