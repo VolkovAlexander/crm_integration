@@ -74,7 +74,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
                     $code = null;
 
-                    $manager_response = $this->cCrm->telephonyCallManager($phone, 0);
+                    $manager_response = $this->cCrm->telephonyCallManager($phone, 1);
                     $this->Log->notice('Debug: <br> ' . print_r($manager_response, true));
                     if ($manager_response->isSuccessful()) {
                         $code = $manager_response['manager']['code'];
