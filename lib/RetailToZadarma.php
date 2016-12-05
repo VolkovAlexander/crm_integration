@@ -183,6 +183,41 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         return $result;
     }
 
+
+
+    public function validateCallbackParams($params)
+    {
+        $clientId = isset($params['clientId']) ? $params['clientId'] : null;
+        $code = isset($params['code']) ? $params['code'] : null;
+        $phone = isset($params['phone']) ? $params['phone'] : null;
+
+        if(empty($clientId) || empty($code) || empty($phone)) {
+            $this->Log->error(sprintf('Can\'t make phone callback, to few params'));
+            return null;
+        }
+
+        try {
+            $response_data_for_codes = $this->cZadarma->call('/v1/pbx/internal/', [], 'GET');
+
+            $this->validateZdResponse($response_data_for_codes);
+
+            $response_data_for_codes = json_decode($response_data_for_codes, true);
+            $internal_codes = isset($response_data_for_codes['numbers']) ? array_values($response_data_for_codes['numbers']) : [];
+        } catch (\Exception $e) {
+            $this->Log->error(sprintf('Can\'t get codes from zadarma'));
+            return null;
+        }
+
+        if(!in_array($code, $internal_codes)) {
+            $this->Log->error(sprintf('Can\'t get codes from zadarma'));
+            return null;
+        }
+
+        $phone = sprintf('+%s', str_replace(' ', '', $phone));
+
+        return [$code, $phone];
+    }
+
     /**
      * @param \RetailCrm\Response\ApiResponse $response
      * @throws \Exception
