@@ -74,22 +74,38 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $phone = isset($params['caller_id']) ? $params['caller_id'] : null;
                     $code = null;
 
-                    $manager_response = $this->cCrm->telephonyCallManager($phone, 1);
+                    $manager_response = $this->cCrm->telephonyCallManager($phone, 0);
                     if ($manager_response->isSuccessful()) {
                         $code = isset($manager_response['manager']) ? $manager_response['manager']['code'] : null;
                     }
 
+                    $codes = [];
+
                     if(empty($code)) {
                         $managers = $this->cCrm->usersList([
-                            'isManager' => true
+                            'isManager' => true,
+                            'status' => 'free',
+                            'online' => true
                         ]);
                         $this->Log->notice(print_r($managers, true));
+
+                        $managers = isset($managers['users']) ? $managers['users'] : [];
+
+                        if(!empty($managers)) {
+                            foreach($managers as $manager) {
+                                if(isset($manager['phone'])) {
+                                    $codes[] = $manager['phone'];
+                                }
+                            }
+                        }
+                    } else {
+                        $codes = [$code];
                     }
 
                     $type = 'in';
 
                     $result = $this->cCrm->telephonyCallEvent(
-                        $phone, $type, [$code], null
+                        $phone, $type, $codes, null
                     );
                     break;
                 case self::ZD_CALLBACK_EVENT_END:
