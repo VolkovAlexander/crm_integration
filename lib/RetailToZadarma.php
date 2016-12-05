@@ -83,7 +83,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         $managers = $this->cCrm->usersList([
                             'isManager' => true
                         ]);
-                        $this->Log->notice(print_r($managers));
+                        $this->Log->notice(print_r($managers, true));
                     }
 
                     $type = 'in';
