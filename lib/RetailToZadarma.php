@@ -160,7 +160,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'in',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => $this->zdStatusToCrmStatus(CommonFunctions::nullableFromArray($params, 'reason')),
+                                    'result' => $this->zdStatusToCrmStatus(CommonFunctions::nullableFromArray($params, 'disposition')),
                                     'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
                                     'externalId' => $pbx_call_id,
                                     'recordUrl' => $call_record_link
