@@ -156,7 +156,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                             $this->Log->notice('<pre>' . print_r($params, true) . '</pre><br>' . CommonFunctions::nullableFromArray($params, 'call_start') .
                             '<br><pre>' . print_r([
-                                    'date' => date('Y-m-d H:i:s', CommonFunctions::nullableFromArray($params, 'call_start')),
+                                    'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
                                     'type' => 'in',
                                     'phone' => $phone,
                                     'code' => $code,
@@ -168,7 +168,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
-                                    'date' => date('Y-m-d H:i:s', CommonFunctions::nullableFromArray($params, 'call_start')),
+                                    'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
                                     'type' => 'in',
                                     'phone' => $phone,
                                     'code' => $code,
