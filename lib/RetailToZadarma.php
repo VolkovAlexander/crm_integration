@@ -160,7 +160,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'in',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => $this->zdStatusToCrmStatus(CommonFunctions::nullableFromArray($params, 'disposition')),
+                                    'result' => CommonFunctions::nullableFromArray($params, 'disposition'),
                                     'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
                                     'externalId' => $pbx_call_id,
                                     'recordUrl' => $call_record_link
@@ -202,7 +202,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'out',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => $this->zdStatusToCrmStatus(CommonFunctions::nullableFromArray($params, 'disposition')),
+                                    'result' => CommonFunctions::nullableFromArray($params, 'disposition'),
                                     'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
                                     'externalId' => $pbx_call_id,
                                     'recordUrl' => $call_record_link
@@ -284,23 +284,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         }
 
         return true;
-    }
-
-    /**
-     * @inheritdoc
-     */
-    protected function zdStatusToCrmStatus($input_status)
-    {
-        $statuses = [
-            'CANCEL' => 'failed',
-            'ANSWER' => 'answered',
-            'BUSY' => 'busy',
-            'NOANSWER' => 'no answer',
-        ];
-
-        $result = CommonFunctions::nullableFromArray($statuses, $input_status);
-        $this->Log->notice($input_status . '<br>' . $result);
-        return empty($result) ? 'unknown' : $result;
     }
 
     /**

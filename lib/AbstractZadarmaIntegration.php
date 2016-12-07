@@ -157,12 +157,6 @@ class AbstractZadarmaIntegration
      */
     protected function initCrmClient() {}
 
-    /**
-     * Перевод статуса звонка из Zadarma в статус на стороне CRM
-     * @param $input_status
-     */
-    protected function zdStatusToCrmStatus($input_status) {}
-
     const ZD_CALLBACK_EVENT_START = 'NOTIFY_START';
     const ZD_CALLBACK_EVENT_INTERNAL = 'NOTIFY_INTERNAL';
     const ZD_CALLBACK_EVENT_END = 'NOTIFY_END';
