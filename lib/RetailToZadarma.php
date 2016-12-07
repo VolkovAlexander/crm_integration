@@ -122,7 +122,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $codes = [];
                     if (empty($code)) {
                         $internal_codes = $this->getInternalCodes(true);
-                        $this->Log->notice(print_r($internal_codes, true));
 
                         if (!empty($internal_codes)) {
                             foreach ($internal_codes as $internal_code) {
@@ -327,6 +326,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                 if($with_manager && empty($user_id)) {
                     $user = CommonFunctions::nullableFromArray($this->cCrm->usersGet($user_id), 'user');
+                    $this->Log->notice(print_r($user, true));
 
                     $isManager = CommonFunctions::nullableFromArray($user, 'isManager');
                     $status = CommonFunctions::nullableFromArray($user, 'status');
