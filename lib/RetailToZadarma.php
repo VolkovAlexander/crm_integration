@@ -134,6 +134,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         $codes = [$code];
                     }
 
+                    $this->Log->notice($code . '<br>' . print_r($codes, true));
+
 
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, $type, $codes, null
