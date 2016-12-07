@@ -150,7 +150,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         );
 
                         if ($result->isSuccessful()) {
-                            $this->Log->notice('HERE!');
                             $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
@@ -167,6 +166,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'recordUrl' => $call_record_link
                                 ]
                             ]);
+                            $this->Log->notice('<pre>' . print_r($result) . '</pre>');
                         }
                     }
                     break;
