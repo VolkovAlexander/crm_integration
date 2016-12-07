@@ -338,7 +338,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 }
 
                 $result[] = [
-                    'code' => $internal_code,
+                    'code' => CommonFunctions::nullableFromArray($internal_code, 'code'),
                     'manager' => $manager
                 ];
             }
