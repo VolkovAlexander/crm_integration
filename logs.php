@@ -6,7 +6,9 @@
  * Time: 10:35
  */
 
-$data = file_exists(__DIR__ . '/log.data') ? file_get_contents(__DIR__ . '/log.data') : null;
+require 'lib/Log.php';
+
+$data = file_exists(__DIR__ . '/log.data') ? file_get_contents(__DIR__ . '/' . \lib\Log::$log_file) : null;
 
 ?>
 

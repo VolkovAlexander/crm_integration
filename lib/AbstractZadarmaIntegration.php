@@ -7,7 +7,12 @@
 namespace lib;
 
 require_once 'Log.php';
+require_once 'CommonFunctions.php';
 
+/**
+ * Class AbstractZadarmaIntegration
+ * @package lib
+ */
 class AbstractZadarmaIntegration
 {
     protected $crm_name = null;
@@ -46,6 +51,7 @@ class AbstractZadarmaIntegration
     }
 
     /**
+     * Передача в Zadarma запроса на коллбек клиенту
      * @param string $from
      * @param string $to
      * @param string $sip
@@ -75,6 +81,13 @@ class AbstractZadarmaIntegration
         return $result;
     }
 
+    /**
+     * Получение ссылки на запись разговора
+     * @param string $call_id
+     * @param string $pbx_call_id
+     * @param int $lifetime
+     * @return null
+     */
     public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
     {
         $result = null;
@@ -100,31 +113,55 @@ class AbstractZadarmaIntegration
         return $result;
     }
 
+    /**
+     * Валидация ответа из Zadarma
+     * @param string $response
+     * @return bool
+     * @throws \Exception
+     */
     public function validateZdResponse($response)
     {
         $data = json_decode($response, true);
 
-        if ($data['status'] !== 'success') {
+        if (CommonFunctions::nullableFromArray($data, 'status')!== 'success') {
             throw new \Exception($data['message']);
         }
 
         return true;
     }
 
+    /**
+     * Валидация ответа из CRM
+     * @param $response
+     */
+    public function validateCrmResponse($response) {}
+
+    /**
+     * Валидация клиентов в обьекте
+     */
+    public function validateClients() {}
+
+    /**
+     * Инициализация клиента Zadarma
+     */
     protected function initZadarmaClient()
     {
-        $this->cZadarma = new \Zadarma_API\Client(
-            $this->zadarma_config['key'], $this->zadarma_config['secret']
-        );
+        $key = CommonFunctions::nullableFromArray($this->zadarma_config, 'key');
+        $secret = CommonFunctions::nullableFromArray($this->zadarma_config, 'secret');
+
+        $this->cZadarma = new \Zadarma_API\Client($key, $secret);
     }
 
-    protected function initCrmClient()
-    {
-    }
+    /**
+     * Инициализация клиента CRM
+     */
+    protected function initCrmClient() {}
 
-    protected function parseRequestFromCrm()
-    {
-    }
+    /**
+     * Перевод статуса звонка из Zadarma в статус на стороне CRM
+     * @param $input_status
+     */
+    protected function zdStatusToCrmStatus($input_status) {}
 
     const ZD_CALLBACK_EVENT_START = 'NOTIFY_START';
     const ZD_CALLBACK_EVENT_INTERNAL = 'NOTIFY_INTERNAL';
