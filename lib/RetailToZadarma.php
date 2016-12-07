@@ -198,7 +198,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
-                                    'date' => date('Y-m-d H:i:s', CommonFunctions::nullableFromArray($params, 'call_start')),
+                                    'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
                                     'type' => 'out',
                                     'phone' => $phone,
                                     'code' => $code,
