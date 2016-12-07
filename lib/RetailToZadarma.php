@@ -154,6 +154,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
 
+                            $this->Log->notice('<pre>' . print_r($params, true) . '</pre>');
+
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
                                     'date' => date('Y-m-d H:i:s', CommonFunctions::nullableFromArray($params, 'call_start')),
