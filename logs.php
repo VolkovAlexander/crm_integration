@@ -11,7 +11,7 @@ require 'lib/Log.php';
 $data = file_exists(__DIR__ . '/log.data') ? file_get_contents(__DIR__ . '/' . \lib\Log::$log_file) : null;
 
 ?>
-
+<meta http-equiv="refresh" content="3">
 <style>
     table, tr, td { border: 1px solid black; border-collapse: collapse; }
     table { width: 100%; }

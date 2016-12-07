@@ -6,8 +6,8 @@
 require 'vendor/autoload.php';
 require 'lib/RetailToZadarma.php';
 
-$name = htmlspecialchars(filter_input(INPUT_POST, 'name'));
-$key = htmlspecialchars(filter_input(INPUT_POST, 'key'));
+$name = addslashes(filter_input(INPUT_POST, 'name'));
+$key = addslashes(filter_input(INPUT_POST, 'key'));
 
 if (!empty($name) && !empty($key)) {
     $new_config_data = sprintf('
@@ -25,8 +25,12 @@ if (!empty($name) && !empty($key)) {
 $config = include 'config/retail.php';
 
 $testClient = new \lib\RetailToZadarma();
-$testClient->registrateSipInCrm();
-$is_connection_success = $testClient->validateClients();
+$is_connection_success = false;
+
+try {
+    $testClient->registrateSipInCrm();
+    $is_connection_success = $testClient->validateClients();
+} catch (Exception $e) {}
 
 ?>
 
@@ -70,11 +74,11 @@ $is_connection_success = $testClient->validateClients();
                     <b style="color: red;">Неверные настройки подключения</b>
                     <br><br>
                 <?php endif; ?>
-                <button type="submit" class="btn btn-primary">Обновить данные для подключения</button>
+                <button type="submit" class="btn btn-primary" style="width: 100%">Обновить данные для подключения</button>
             </form>
         </div>
         <div class="col-md-8">
-            <iframe src="logs.php" style="width: 100%;" frameborder="no">
+            <iframe src="logs.php" style="width: 100%; height: 380px" frameborder="no">
             </iframe>
         </div>
     </div>
