@@ -324,11 +324,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 $manager = [];
                 $user_id = CommonFunctions::nullableFromArray($internal_code, 'userId');
 
-                $this->Log->notice(print_r($internal_code, true) . '<br>' . $user_id);
-
-                if($with_manager && empty($user_id)) {
+                if($with_manager && !empty($user_id)) {
                     $user = CommonFunctions::nullableFromArray($this->cCrm->usersGet($user_id), 'user');
-                    $this->Log->notice(print_r($user, true));
 
                     $isManager = CommonFunctions::nullableFromArray($user, 'isManager');
                     $status = CommonFunctions::nullableFromArray($user, 'status');
