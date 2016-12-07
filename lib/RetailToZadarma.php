@@ -166,7 +166,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'recordUrl' => $call_record_link
                                 ]
                             ]);
-                            $this->Log->notice('<pre>' . print_r($result) . '</pre>');
+                            $this->Log->notice('<pre>' . print_r($result, true) . '</pre>');
                         }
                     }
                     break;
