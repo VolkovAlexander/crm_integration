@@ -122,6 +122,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $codes = [];
                     if (empty($code)) {
                         $internal_codes = $this->getInternalCodes(true);
+                        $this->Log->notice(print_r($internal_codes, true));
 
                         if (!empty($internal_codes)) {
                             foreach ($internal_codes as $internal_code) {
@@ -133,9 +134,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     } else {
                         $codes = [$code];
                     }
-
-                    $this->Log->notice($code . '<br>' . print_r($codes, true));
-
 
                     $result = $this->cCrm->telephonyCallEvent(
                         $phone, $type, $codes, null
