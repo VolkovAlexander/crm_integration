@@ -6,9 +6,7 @@
  * Time: 10:35
  */
 
-define('ROOT_DIR', './../');
-
-require ROOT_DIR . 'lib/Log.php';
+require './../lib/Log.php';
 
 $log_filename = sprintf('%s/%s', __DIR__, \lib\Log::$log_file);
 $data = file_exists($log_filename) ? file_get_contents($log_filename) : null;

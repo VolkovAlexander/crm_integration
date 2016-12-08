@@ -3,10 +3,8 @@
  * @author VolkovAlexander
  */
 
-define('ROOT_DIR', './../');
-
-require ROOT_DIR . 'vendor/autoload.php';
-require ROOT_DIR . 'lib/RetailToZadarma.php';
+require './../vendor/autoload.php';
+require './../lib/RetailToZadarma.php';
 
 $name = addslashes(filter_input(INPUT_POST, 'name'));
 $key = addslashes(filter_input(INPUT_POST, 'key'));
@@ -24,7 +22,7 @@ if (!empty($name) && !empty($key)) {
     @file_put_contents(ROOT_DIR . 'config/retail.php', $new_config_data);
 }
 
-$config = include ROOT_DIR . 'config/retail.php';
+$config = include './../config/retail.php';
 
 $testClient = new \lib\RetailToZadarma();
 $is_connection_success = false;

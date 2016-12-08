@@ -3,15 +3,13 @@
  * @author Volkov Alexander
  */
 
-define('ROOT_DIR', './../');
-
 /** Проверка для принятия скрипта системой zadarma */
 if (isset($_GET['zd_echo'])) exit($_GET['zd_echo']);
 
-require ROOT_DIR . 'vendor/autoload.php';
-require ROOT_DIR . 'lib/RetailToZadarma.php';
+require './../vendor/autoload.php';
+require './../lib/RetailToZadarma.php';
 
-$config = include ROOT_DIR . 'config/zadarma.php';
+$config = include './../config/zadarma.php';
 
 $remoteIp = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
 $callerId = filter_input(INPUT_POST, 'caller_id');
