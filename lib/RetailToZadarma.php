@@ -113,12 +113,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             );
 
             $disposition = CommonFunctions::nullableFromArray($params, 'disposition');
-            if ($disposition !== 'answered' && !empty($disposition)) {
+            if (!empty($disposition)) {
                 $this->Log->notice($disposition . '<br><pre>' . print_r($params, true) . '</pre>');
             }
 
+            $event = CommonFunctions::nullableFromArray($params, 'event');
 
-            switch ($params['event']) {
+            switch ($event) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'caller_id');
                     $code = CommonFunctions::nullableFromArray(CommonFunctions::nullableFromArray($this->cCrm->telephonyCallManager($phone, 0), 'manager'), 'code');
