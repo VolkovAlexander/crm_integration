@@ -198,12 +198,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 case self::ZD_CALLBACK_EVENT_OUT_END:
                     $phone = CommonFunctions::nullableFromArray($params, 'destination');
                     $code = CommonFunctions::nullableFromArray($params, 'internal');
-
-                    if (!in_array($code, $internal_codes)) {
-                        $phone = CommonFunctions::nullableFromArray($params, 'internal');
-                        $code = CommonFunctions::nullableFromArray($params, 'destination');
-                    }
-
                     $type = 'hangup';
 
                     if (in_array($code, $internal_codes)) {
