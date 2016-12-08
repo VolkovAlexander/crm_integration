@@ -18,6 +18,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 {
     protected $crm_name = 'retail';
 
+    protected $zd_name = 'zadarma';
+    protected $make_call_url = 'http://crm.e3d567e3.pub.sipdc.net/retail/make-call.php';
+    protected $zd_image = 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg';
+
     /** @var \RetailCrm\ApiClient|null $cCrm */
     public $cCrm = null;
     /** @var \Zadarma_API\Client|null $cZadarma */
@@ -77,8 +81,11 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         if (!$is_already_registered) {
             try {
                 $response = $this->cCrm->telephonySettingsEdit(
-                    'zadarma', md5(print_r($this->crm_config, true)), true, 'Zadarma', 'http://retail.e3d567e3.pub.sipdc.net/crm_integration/make-call.php',
-                    'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg',
+                    $this->zd_name,
+                    md5(print_r($this->crm_config, true)), true,
+                    $this->zd_name,
+                    $this->make_call_url,
+                    $this->zd_image,
                     [], [], true, true, true, true, false
                 );
                 $this->validateCrmResponse($response);
