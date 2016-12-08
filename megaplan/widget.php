@@ -3,7 +3,7 @@
  * @author Volkov Alexander
  */
 
-$widget_id = filter_input(INPUT_GET, 'widget_id');
+$widget_id = filter_input(INPUT_GET, 'id');
 
 $result = null;
 
@@ -38,4 +38,4 @@ switch ($widget_id) {
         break;
 }
 
-return $result;
+echo $result;

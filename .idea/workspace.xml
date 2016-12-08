@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/megaplan/widget.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/megaplan/widget.php" afterPath="$PROJECT_DIR$/megaplan/widget.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,16 +31,16 @@
       <file leaf-file-name="widget.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/megaplan/widget.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="702">
-              <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state relative-caret-position="108">
+              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding>
                 <element signature="e#6#41#0#PHP" expanded="true" />
-                <marker date="1481187622735" expanded="true" signature="189:581" ph="..." />
-                <marker date="1481187622735" expanded="true" signature="228:565" ph="{...}" />
-                <marker date="1481187622735" expanded="true" signature="638:1194" ph="..." />
-                <marker date="1481187622735" expanded="true" signature="693:829" ph="..." />
-                <marker date="1481187622735" expanded="true" signature="882:998" ph="..." />
-                <marker date="1481187622735" expanded="true" signature="1053:1179" ph="..." />
+                <marker date="1481187749114" expanded="true" signature="182:574" ph="..." />
+                <marker date="1481187749114" expanded="true" signature="221:558" ph="{...}" />
+                <marker date="1481187749114" expanded="true" signature="631:1187" ph="..." />
+                <marker date="1481187749114" expanded="true" signature="686:822" ph="..." />
+                <marker date="1481187749114" expanded="true" signature="875:991" ph="..." />
+                <marker date="1481187749114" expanded="true" signature="1046:1172" ph="..." />
               </folding>
             </state>
           </provider>
@@ -292,12 +291,12 @@
       <workItem from="1481023730787" duration="8512000" />
       <workItem from="1481087668145" duration="1126000" />
       <workItem from="1481088864717" duration="5109000" />
-      <workItem from="1481114459295" duration="12975000" />
+      <workItem from="1481114459295" duration="13055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92253000" />
+    <option name="totallyTimeSpent" value="92333000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -309,7 +308,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1920" y="30" width="1920" height="1050" extended-state="7" />
+    <frame x="1920" y="30" width="1920" height="1050" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20625" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
@@ -676,16 +675,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/megaplan/widget.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="702">
-          <caret line="39" column="0" lean-forward="true" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="e#6#41#0#PHP" expanded="true" />
-            <marker date="1481187622735" expanded="true" signature="189:581" ph="..." />
-            <marker date="1481187622735" expanded="true" signature="228:565" ph="{...}" />
-            <marker date="1481187622735" expanded="true" signature="638:1194" ph="..." />
-            <marker date="1481187622735" expanded="true" signature="693:829" ph="..." />
-            <marker date="1481187622735" expanded="true" signature="882:998" ph="..." />
-            <marker date="1481187622735" expanded="true" signature="1053:1179" ph="..." />
+            <marker date="1481187749114" expanded="true" signature="182:574" ph="..." />
+            <marker date="1481187749114" expanded="true" signature="221:558" ph="{...}" />
+            <marker date="1481187749114" expanded="true" signature="631:1187" ph="..." />
+            <marker date="1481187749114" expanded="true" signature="686:822" ph="..." />
+            <marker date="1481187749114" expanded="true" signature="875:991" ph="..." />
+            <marker date="1481187749114" expanded="true" signature="1046:1172" ph="..." />
           </folding>
         </state>
       </provider>
