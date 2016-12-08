@@ -1,7 +1,9 @@
 <?php
 
-require 'vendor/autoload.php';
-require 'lib/RetailToZadarma.php';
+define('ROOT_DIR', './../');
+
+require ROOT_DIR . 'vendor/autoload.php';
+require ROOT_DIR . 'lib/RetailToZadarma.php';
 
 $RetailToZadarma = new \lib\RetailToZadarma();
 

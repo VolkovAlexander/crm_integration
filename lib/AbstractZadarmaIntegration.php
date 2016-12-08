@@ -44,7 +44,7 @@ class AbstractZadarmaIntegration
         try {
             $this->initZadarmaClient();
             $this->initCrmClient();
-            $this->Log = new Log();
+            $this->Log = new Log($this->crm_name);
         } catch (\Exception $e) {
             throw new \Exception('Can\'t initialize api-clients');
         }

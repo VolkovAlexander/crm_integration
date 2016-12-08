@@ -6,9 +6,11 @@
  * Time: 10:35
  */
 
-require 'lib/Log.php';
+define('ROOT_DIR', './../');
 
-$data = file_exists(__DIR__ . '/log.data') ? file_get_contents(__DIR__ . '/' . \lib\Log::$log_file) : null;
+require ROOT_DIR . 'lib/Log.php';
+
+$data = file_exists(__DIR__ . \lib\Log::$log_file) ? file_get_contents(__DIR__ . \lib\Log::$log_file) : null;
 
 ?>
 <meta http-equiv="refresh" content="3">

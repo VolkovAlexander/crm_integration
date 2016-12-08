@@ -17,9 +17,9 @@ class Log
     /**
      * @inheritdoc
      */
-    public function __construct()
+    public function __construct($crm_name)
     {
-        self::$log_file = __DIR__ . '/./../' . self::$log_file;
+        self::$log_file = sprintf('%s/./../%s/%s', __DIR__, $crm_name, self::$log_file);
 
         if (!file_exists(self::$log_file)) {
             fopen(self::$log_file, 'wb');
