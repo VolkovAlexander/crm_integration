@@ -10,7 +10,8 @@ define('ROOT_DIR', './../');
 
 require ROOT_DIR . 'lib/Log.php';
 
-$data = file_exists(__DIR__ . \lib\Log::$log_file) ? file_get_contents(__DIR__ . \lib\Log::$log_file) : null;
+$log_filename = sprintf('%s/%s', __DIR__, \lib\Log::$log_file);
+$data = file_exists($log_filename) ? file_get_contents($log_filename) : null;
 
 ?>
 <meta http-equiv="refresh" content="3">
