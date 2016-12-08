@@ -113,7 +113,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             );
 
             $disposition = CommonFunctions::nullableFromArray($params, 'disposition');
-            if($disposition !== 'answered') {
+            if($disposition !== 'answered' && !empty($disposition)) {
                 $this->Log->notice($disposition . '<br><pre>' . print_r($params, true) . '</pre>');
             }
 
@@ -149,13 +149,19 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = CommonFunctions::nullableFromArray($params, 'internal');
                     $type = 'hangup';
 
+                    $this->Log->error("HERE 1");
+
                     if (in_array($code, $internal_codes)) {
                         /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
                             $phone, $type, [$code], null
                         );
 
+                        $this->Log->error("HERE 2");
+
                         if ($result->isSuccessful()) {
+
+                            $this->Log->error("HERE 3");
                             $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
@@ -172,6 +178,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'recordUrl' => $call_record_link
                                 ]
                             ]);
+
+                            $this->Log->error('<pre>' . print_r($result, true) . '</pre>');
                         }
                     }
                     break;

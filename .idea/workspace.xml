@@ -41,16 +41,16 @@
       <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="248">
-              <caret line="116" column="99" lean-forward="false" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
+            <state relative-caret-position="752">
+              <caret line="181" column="91" lean-forward="false" selection-start-line="181" selection-start-column="91" selection-end-line="181" selection-end-column="91" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#472#779#0#PHP" expanded="false" />
                 <element signature="e#820#1347#0#PHP" expanded="false" />
                 <element signature="e#1442#2641#0#PHP" expanded="false" />
-                <element signature="e#9555#10859#0#PHP" expanded="false" />
-                <element signature="e#10982#11173#0#PHP" expanded="false" />
-                <element signature="e#11312#12720#0#PHP" expanded="false" />
+                <element signature="e#9834#11138#0#PHP" expanded="false" />
+                <element signature="e#11261#11452#0#PHP" expanded="false" />
+                <element signature="e#11591#12999#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -92,8 +92,8 @@
       <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="350">
-              <caret line="157" column="41" lean-forward="false" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
+            <state relative-caret-position="698">
+              <caret line="159" column="51" lean-forward="true" selection-start-line="159" selection-start-column="51" selection-end-line="159" selection-end-column="51" />
               <folding>
                 <element signature="e#6#71#0#PHP" expanded="true" />
                 <element signature="e#526#1276#0#PHP" expanded="false" />
@@ -320,12 +320,12 @@
       <workItem from="1481023730787" duration="8512000" />
       <workItem from="1481087668145" duration="1126000" />
       <workItem from="1481088864717" duration="5109000" />
-      <workItem from="1481114459295" duration="5187000" />
+      <workItem from="1481114459295" duration="5578000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84465000" />
+    <option name="totallyTimeSpent" value="84856000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -434,9 +434,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,9 +465,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,9 +481,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -497,9 +497,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -513,9 +513,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -666,8 +666,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="157" column="41" lean-forward="false" selection-start-line="157" selection-start-column="41" selection-end-line="157" selection-end-column="41" />
+        <state relative-caret-position="698">
+          <caret line="159" column="51" lean-forward="true" selection-start-line="159" selection-start-column="51" selection-end-line="159" selection-end-column="51" />
           <folding>
             <element signature="e#6#71#0#PHP" expanded="true" />
             <element signature="e#526#1276#0#PHP" expanded="false" />
@@ -681,16 +681,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="248">
-          <caret line="116" column="99" lean-forward="false" selection-start-line="116" selection-start-column="99" selection-end-line="116" selection-end-column="99" />
+        <state relative-caret-position="752">
+          <caret line="181" column="91" lean-forward="false" selection-start-line="181" selection-start-column="91" selection-end-line="181" selection-end-column="91" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#9555#10859#0#PHP" expanded="false" />
-            <element signature="e#10982#11173#0#PHP" expanded="false" />
-            <element signature="e#11312#12720#0#PHP" expanded="false" />
+            <element signature="e#9834#11138#0#PHP" expanded="false" />
+            <element signature="e#11261#11452#0#PHP" expanded="false" />
+            <element signature="e#11591#12999#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
