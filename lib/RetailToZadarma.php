@@ -112,6 +112,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 ), 'numbers'
             );
 
+            $this->Log->notice(CommonFunctions::nullableFromArray($params, 'disposition'));
+
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'caller_id');
