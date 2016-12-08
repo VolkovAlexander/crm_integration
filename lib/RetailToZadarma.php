@@ -211,12 +211,12 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $phone, $type, [$code], null
                         );
 
-                        $this->Log->notice('<pre>' . print_r($result, true) . '</pre>');
-
                         if ($result->isSuccessful()) {
                             $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
+
+                            $this->Log->notice(CommonFunctions::nullableFromArray($params, 'disposition'));
 
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
@@ -230,8 +230,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'recordUrl' => $call_record_link
                                 ]
                             ]);
-
-                            $this->Log->notice('<pre>' . print_r($result, true) . '</pre>');
                         }
                     }
                     break;
