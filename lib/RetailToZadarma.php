@@ -71,7 +71,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 $result = true;
             }
         } catch (\Exception $e) {
-            $this->Log->error("Can't check crm registration: " . $e->getMessage());
+            $this->Log->error("Can't check crm registration: ", $e->getMessage());
         }
 
         if (!$is_already_registered) {
@@ -84,7 +84,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 $this->validateCrmResponse($response);
                 $result = true;
             } catch (\RetailCrm\Exception\CurlException $e) {
-                $this->Log->error("Registration crm action error: " . $e->getMessage());
+                $this->Log->error("Registration crm action error: ", $e->getMessage());
             }
         }
 
@@ -111,11 +111,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     true
                 ), 'numbers'
             );
-
-            $disposition = CommonFunctions::nullableFromArray($params, 'disposition');
-            if (!empty($disposition)) {
-                $this->Log->notice($disposition . '<br><pre>' . print_r($params, true) . '</pre>');
-            }
 
             $event = CommonFunctions::nullableFromArray($params, 'event');
 
@@ -150,19 +145,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = CommonFunctions::nullableFromArray($params, 'internal');
                     $type = 'hangup';
 
-                    $this->Log->error("HERE 1");
-
                     if (in_array($code, $internal_codes)) {
                         /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
                             $phone, $type, [$code], null
                         );
 
-                        $this->Log->error("HERE 2");
-
                         if ($result->isSuccessful()) {
-
-                            $this->Log->error("HERE 3");
                             $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
@@ -179,8 +168,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'recordUrl' => $call_record_link
                                 ]
                             ]);
-
-                            $this->Log->error('<pre>' . print_r($result, true) . '</pre>');
                         }
                     }
                     break;
@@ -211,8 +198,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                             $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
                             $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
 
-                            $this->Log->notice(CommonFunctions::nullableFromArray($params, 'disposition'));
-
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
                                     'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
@@ -233,13 +218,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             }
 
             $this->validateCrmResponse($result);
-            $this->Log->notice(sprintf('New call event recorded<pre>%s</pre>', print_r([
+            $this->Log->notice('New call event recorded', [
                 'type' => $type,
                 'phone' => $phone,
                 'code' => $code,
-            ], true)));
+            ]);
         } catch (\Exception $e) {
-            $this->Log->error(sprintf('Can\'t send information about incoming call to crm (%s)', $e->getMessage()));
+            $this->Log->error('Can\'t send information about incoming call to crm', $e->getMessage());
         }
 
         return $result;
@@ -257,7 +242,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $phone = CommonFunctions::nullableFromArray($params, 'phone');
 
         if (empty($clientId) || empty($code) || empty($phone)) {
-            $this->Log->error(sprintf('Can\'t make phone callback, to few params'));
+            $this->Log->error('Can\'t make phone callback, to few params');
             return null;
         }
 

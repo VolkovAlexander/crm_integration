@@ -32,28 +32,31 @@ class Log
 
     /**
      * Запись уведомления в логи
-     * @param $message
+     * @param string $message
+     * @param array $info_array
      */
-    public function notice($message)
+    public function notice($message, $info_array = [])
     {
-        $this->writeNewMessage(self::NOTICE, $message);
+        $this->writeNewMessage(self::NOTICE, $message, $info_array);
     }
 
     /**
      * Запись ошибки в логи
-     * @param $message
+     * @param string $message
+     * @param array $info_array
      */
-    public function error($message)
+    public function error($message, $info_array = [])
     {
-        $this->writeNewMessage(self::ERROR, $message);
+        $this->writeNewMessage(self::ERROR, $message, $info_array);
     }
 
     /**
      * Внутренняя функция записи данных в лог
-     * @param $code
-     * @param $message
+     * @param string $code
+     * @param string $message
+     * @param array $info_array
      */
-    private function writeNewMessage($code, $message)
+    private function writeNewMessage($code, $message, $info_array = [])
     {
         switch ($this->mode) {
             case 'file':
@@ -61,8 +64,8 @@ class Log
                     $old_data = file_get_contents(self::$log_file);
 
                     file_put_contents(self::$log_file,
-                        sprintf('<tr class="log-%s"><td>%s</td><td>%s</td><td>%s</td></tr>',
-                            $code, date('d.m.Y H:i'), $code, $message
+                        sprintf('<tr class="log-%s"><td>%s</td><td>%s</td><td>%s</td><td><pre>%s</pre></td></tr>',
+                            $code, date('d.m.Y H:i'), $code, $message, print_r($info_array, true)
                         ) . PHP_EOL . $old_data
                     );
                 } catch (\Exception $e) {

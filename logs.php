@@ -27,6 +27,7 @@ $data = file_exists(__DIR__ . '/log.data') ? file_get_contents(__DIR__ . '/' . \
             <td class="col-date">Date</td>
             <td>Code</td>
             <td>Message</td>
+            <td>Additional</td>
         </tr>
     </thead>
     <tbody>

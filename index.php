@@ -54,7 +54,7 @@ try {
             <h5>Не забудьте настроить внутри CRM связки "менеджеры <-> добавочные коды" и "сайты <-> внешние номера"</h5>
             <hr>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <form method="POST" action="index.php">
                 <div class="form-group">
                     <label for="exampleInputEmail1">Наименование Вашей CRM</label>
@@ -77,7 +77,7 @@ try {
                 <button type="submit" class="btn btn-primary" style="width: 100%">Обновить данные для подключения</button>
             </form>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-9">
             <iframe src="logs.php" style="width: 100%; height: 380px" frameborder="no">
             </iframe>
         </div>

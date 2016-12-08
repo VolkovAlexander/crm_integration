@@ -73,9 +73,9 @@ class AbstractZadarmaIntegration
 
             $this->validateZdResponse($result);
 
-            $this->Log->notice(sprintf('New output calling from %s to %s', $from, $to));
+            $this->Log->notice(sprintf('New output calling from %s to %s', $from, $to), json_decode($result, true));
         } catch (\Exception $e) {
-            $this->Log->error(sprintf('Failed output calling from %s to %s (%s)', $from, $to, $e->getMessage()));
+            $this->Log->error(sprintf('Failed output calling from %s to %s', $from, $to), $e->getMessage());
         }
 
         return $result;
@@ -106,7 +106,7 @@ class AbstractZadarmaIntegration
                 $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
             }
         } catch (\Exception $e) {
-            $this->Log->error(sprintf('Can\'t get call record (%s)', $e->getMessage()));
+            $this->Log->error('Can\'t get call record', $e->getMessage());
         }
 
 
