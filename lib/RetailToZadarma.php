@@ -112,7 +112,11 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 ), 'numbers'
             );
 
-            $this->Log->notice(CommonFunctions::nullableFromArray($params, 'disposition'));
+            $disposition = CommonFunctions::nullableFromArray($params, 'disposition');
+            if($disposition !== 'answered') {
+                $this->Log->notice($disposition . '<br><pre>' . print_r($params, true) . '</pre>');
+            }
+
 
             switch ($params['event']) {
                 case self::ZD_CALLBACK_EVENT_START:
