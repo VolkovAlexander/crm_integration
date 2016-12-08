@@ -41,16 +41,28 @@
       <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="231" column="31" lean-forward="false" selection-start-line="231" selection-start-column="31" selection-end-line="231" selection-end-column="31" />
+            <state relative-caret-position="266">
+              <caret line="179" column="31" lean-forward="true" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#472#779#0#PHP" expanded="false" />
                 <element signature="e#820#1347#0#PHP" expanded="false" />
                 <element signature="e#1442#2641#0#PHP" expanded="false" />
-                <element signature="e#10211#11515#0#PHP" expanded="false" />
-                <element signature="e#11638#11829#0#PHP" expanded="false" />
-                <element signature="e#11968#13376#0#PHP" expanded="false" />
+                <element signature="e#10269#11573#0#PHP" expanded="false" />
+                <element signature="e#11696#11887#0#PHP" expanded="false" />
+                <element signature="e#12026#13434#0#PHP" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonFunctions.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/CommonFunctions.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="234">
+              <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+              <folding>
+                <element signature="e#6#41#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,13 +158,13 @@
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/config/zadarma.php" />
         <option value="$PROJECT_DIR$/lib/Log.php" />
-        <option value="$PROJECT_DIR$/lib/CommonFunctions.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/logs.php" />
         <option value="$PROJECT_DIR$/config/retail.php" />
         <option value="$PROJECT_DIR$/log.data" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
+        <option value="$PROJECT_DIR$/lib/CommonFunctions.php" />
         <option value="$PROJECT_DIR$/lib/RetailToZadarma.php" />
       </list>
     </option>
@@ -320,12 +332,12 @@
       <workItem from="1481023730787" duration="8512000" />
       <workItem from="1481087668145" duration="1126000" />
       <workItem from="1481088864717" duration="5109000" />
-      <workItem from="1481114459295" duration="6296000" />
+      <workItem from="1481114459295" duration="6829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85574000" />
+    <option name="totallyTimeSpent" value="86107000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -434,9 +446,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -465,9 +477,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -481,9 +493,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -497,9 +509,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -513,9 +525,9 @@
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -584,16 +596,6 @@
         <state relative-caret-position="85">
           <caret line="7" column="39" lean-forward="true" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/CommonFunctions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-          <folding>
-            <element signature="e#6#41#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,18 +681,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/CommonFunctions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="13" column="5" lean-forward="false" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+          <folding>
+            <element signature="e#6#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="231" column="31" lean-forward="false" selection-start-line="231" selection-start-column="31" selection-end-line="231" selection-end-column="31" />
+        <state relative-caret-position="266">
+          <caret line="179" column="31" lean-forward="true" selection-start-line="179" selection-start-column="31" selection-end-line="179" selection-end-column="31" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#472#779#0#PHP" expanded="false" />
             <element signature="e#820#1347#0#PHP" expanded="false" />
             <element signature="e#1442#2641#0#PHP" expanded="false" />
-            <element signature="e#10211#11515#0#PHP" expanded="false" />
-            <element signature="e#11638#11829#0#PHP" expanded="false" />
-            <element signature="e#11968#13376#0#PHP" expanded="false" />
+            <element signature="e#10269#11573#0#PHP" expanded="false" />
+            <element signature="e#11696#11887#0#PHP" expanded="false" />
+            <element signature="e#12026#13434#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

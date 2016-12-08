@@ -172,7 +172,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'in',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => CommonFunctions::nullableFromArray($params, 'disposition'),
+                                    'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($params, 'disposition')),
                                     'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
                                     'externalId' => $pbx_call_id,
                                     'recordUrl' => $call_record_link
@@ -224,7 +224,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                     'type' => 'out',
                                     'phone' => $phone,
                                     'code' => $code,
-                                    'result' => CommonFunctions::nullableFromArray($params, 'disposition'),
+                                    'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($params, 'disposition')),
                                     'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
                                     'externalId' => $pbx_call_id,
                                     'recordUrl' => $call_record_link
@@ -346,6 +346,40 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     'code' => CommonFunctions::nullableFromArray($internal_code, 'code'),
                     'manager' => $manager
                 ];
+            }
+        }
+
+        return $result;
+    }
+
+    /**
+     * Конвертация статуса завершения звонка
+     * @param $disposition
+     * @return string
+     */
+    private function convertZdDisposition($disposition)
+    {
+        $crm_statuses = ['answered', 'busy', 'not allowed', 'no answer', 'failed'];
+
+        $result = 'unknown';
+
+        if (in_array($disposition, $crm_statuses)) {
+            $result = $disposition;
+        } else {
+            switch ($disposition) {
+                case 'cancel':
+                    $result = 'busy';
+                    break;
+                case 'no money':
+                case 'unallocated number':
+                case 'no limit':
+                case 'no day limit':
+                case 'line limit':
+                case 'no money, no limit':
+                    $result = 'failed';
+                    break;
+                default:
+                    break;
             }
         }
 
