@@ -34,6 +34,8 @@ class AbstractZadarmaIntegration
     {
         define('ROOT_DIR', sprintf('%s/./../', __DIR__));
 
+        $this->Log = new Log($this->crm_name);
+
         $this->zadarma_config = include ROOT_DIR . '/config/zadarma.php';
         $crm_config_file = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/config/%s.php', ROOT_DIR, $this->crm_name));
 
@@ -41,12 +43,13 @@ class AbstractZadarmaIntegration
             $this->crm_config = include $crm_config_file;
         } else throw new \Exception(sprintf('Configuration file for "%s" not found', $this->crm_name));
 
-        try {
-            $this->initZadarmaClient();
-            $this->initCrmClient();
-            $this->Log = new Log($this->crm_name);
-        } catch (\Exception $e) {
-            throw new \Exception('Can\'t initialize api-clients');
+        if(is_array($this->zadarma_config) && is_array($this->crm_config)) {
+            try {
+                $this->initZadarmaClient();
+                $this->initCrmClient();
+            } catch (\Exception $e) {
+                $this->Log->error('Can\'t initialize api-clients');
+            }
         }
     }
 
@@ -123,7 +126,7 @@ class AbstractZadarmaIntegration
     {
         $data = json_decode($response, true);
 
-        if (CommonFunctions::nullableFromArray($data, 'status')!== 'success') {
+        if (CommonFunctions::nullableFromArray($data, 'status') !== 'success') {
             throw new \Exception($data['message']);
         }
 
@@ -134,12 +137,16 @@ class AbstractZadarmaIntegration
      * Валидация ответа из CRM
      * @param $response
      */
-    public function validateCrmResponse($response) {}
+    public function validateCrmResponse($response)
+    {
+    }
 
     /**
      * Валидация клиентов в обьекте
      */
-    public function validateClients() {}
+    public function validateClients()
+    {
+    }
 
     /**
      * Инициализация клиента Zadarma
@@ -155,7 +162,9 @@ class AbstractZadarmaIntegration
     /**
      * Инициализация клиента CRM
      */
-    protected function initCrmClient() {}
+    protected function initCrmClient()
+    {
+    }
 
     const ZD_CALLBACK_EVENT_START = 'NOTIFY_START';
     const ZD_CALLBACK_EVENT_INTERNAL = 'NOTIFY_INTERNAL';

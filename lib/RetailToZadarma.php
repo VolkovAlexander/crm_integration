@@ -43,17 +43,21 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     {
         $result = true;
 
-        $test_response = json_decode($this->cZadarma->call('/v1/info/balance/', [], 'GET'), true);
-        if (CommonFunctions::nullableFromArray($test_response, 'status') === 'error') {
-            $this->cZadarma = null;
-            $result = false;
-        }
+        if (!empty($this->cZadarma)) {
+            $test_response = json_decode($this->cZadarma->call('/v1/info/balance/', [], 'GET'), true);
+            if (CommonFunctions::nullableFromArray($test_response, 'status') === 'error') {
+                $this->cZadarma = null;
+                $result = false;
+            }
+        } else $result = false;
 
-        $test_response = $this->cCrm->usersList();
-        if (!$test_response->isSuccessful()) {
-            $this->cCrm = null;
-            $result = false;
-        }
+        if (!empty($this->cCrm)) {
+            $test_response = $this->cCrm->usersList();
+            if (!$test_response->isSuccessful()) {
+                $this->cCrm = null;
+                $result = false;
+            }
+        } else $result = false;
 
         return $result;
     }
@@ -68,30 +72,32 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         $is_already_registered = false;
 
-        try {
-            $response = $this->cCrm->telephonySettingsGet('zadarma');
-            if ($response->isSuccessful()) {
-                $is_already_registered = true;
-                $result = true;
-            }
-        } catch (\Exception $e) {
-            $this->Log->error("Can't check crm registration: ", $e->getMessage());
-        }
-
-        if (!$is_already_registered) {
+        if ($this->validateClients()) {
             try {
-                $response = $this->cCrm->telephonySettingsEdit(
-                    $this->zd_name,
-                    md5(print_r($this->crm_config, true)), true,
-                    $this->zd_name,
-                    $this->make_call_url,
-                    $this->zd_image,
-                    [], [], true, true, true, true, false
-                );
-                $this->validateCrmResponse($response);
-                $result = true;
-            } catch (\RetailCrm\Exception\CurlException $e) {
-                $this->Log->error("Registration crm action error: ", $e->getMessage());
+                $response = $this->cCrm->telephonySettingsGet('zadarma');
+                if ($response->isSuccessful()) {
+                    $is_already_registered = true;
+                    $result = true;
+                }
+            } catch (\Exception $e) {
+                $this->Log->error("Can't check crm registration: ", $e->getMessage());
+            }
+
+            if (!$is_already_registered) {
+                try {
+                    $response = $this->cCrm->telephonySettingsEdit(
+                        $this->zd_name,
+                        md5(print_r($this->crm_config, true)), true,
+                        $this->zd_name,
+                        $this->make_call_url,
+                        $this->zd_image,
+                        [], [], true, true, true, true, false
+                    );
+                    $this->validateCrmResponse($response);
+                    $result = true;
+                } catch (\RetailCrm\Exception\CurlException $e) {
+                    $this->Log->error("Registration crm action error: ", $e->getMessage());
+                }
             }
         }
 
