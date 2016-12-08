@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/retail.php" afterPath="$PROJECT_DIR$/config/retail.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/zadarma.php" afterPath="$PROJECT_DIR$/config/zadarma.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" afterPath="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/CommonFunctions.php" afterPath="$PROJECT_DIR$/lib/CommonFunctions.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/RetailToZadarma.php" afterPath="$PROJECT_DIR$/lib/RetailToZadarma.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/index.php" afterPath="$PROJECT_DIR$/retail/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,8 +32,8 @@
       <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
+            <state relative-caret-position="54">
+              <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
               <folding />
             </state>
           </provider>
@@ -76,7 +71,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="334">
@@ -104,7 +99,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
@@ -190,7 +185,6 @@
         <option value="$PROJECT_DIR$/install.php" />
         <option value="$PROJECT_DIR$/callback.php" />
         <option value="$PROJECT_DIR$/log.data" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/logs.php" />
         <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/lib/Log.php" />
@@ -206,6 +200,7 @@
         <option value="$PROJECT_DIR$/config/retail.php" />
         <option value="$PROJECT_DIR$/config/zadarma.php" />
         <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -388,12 +383,12 @@
       <workItem from="1481023730787" duration="8512000" />
       <workItem from="1481087668145" duration="1126000" />
       <workItem from="1481088864717" duration="5109000" />
-      <workItem from="1481114459295" duration="20390000" />
+      <workItem from="1481114459295" duration="20523000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="99668000" />
+    <option name="totallyTimeSpent" value="99801000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,14 +735,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="23" column="24" lean-forward="true" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/CommonFunctions.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
@@ -776,19 +763,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
+    <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
+        <state relative-caret-position="450">
+          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
           <folding>
-            <element signature="e#6#66#0#PHP" expanded="true" />
-            <element signature="e#695#1002#0#PHP" expanded="false" />
-            <element signature="e#3308#9730#0#PHP" expanded="false" />
-            <element signature="e#9896#11191#0#PHP" expanded="false" />
-            <element signature="e#11314#11505#0#PHP" expanded="false" />
-            <element signature="e#11644#13052#0#PHP" expanded="false" />
-            <element signature="e#13168#13976#0#PHP" expanded="false" />
+            <element signature="e#6#71#0#PHP" expanded="true" />
+            <element signature="e#1607#2305#0#PHP" expanded="false" />
+            <element signature="e#2483#3292#0#PHP" expanded="false" />
+            <element signature="e#3426#3695#0#PHP" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="19" lean-forward="false" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -808,15 +800,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
+    <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="48" column="39" lean-forward="true" selection-start-line="48" selection-start-column="39" selection-end-line="48" selection-end-column="39" />
+        <state relative-caret-position="334">
+          <caret line="43" column="23" lean-forward="false" selection-start-line="43" selection-start-column="23" selection-end-line="43" selection-end-column="23" />
           <folding>
-            <element signature="e#6#71#0#PHP" expanded="true" />
-            <element signature="e#1607#2305#0#PHP" expanded="false" />
-            <element signature="e#2483#3292#0#PHP" expanded="false" />
-            <element signature="e#3426#3695#0#PHP" expanded="false" />
+            <element signature="e#6#66#0#PHP" expanded="true" />
+            <element signature="e#695#1002#0#PHP" expanded="false" />
+            <element signature="e#3308#9730#0#PHP" expanded="false" />
+            <element signature="e#9896#11191#0#PHP" expanded="false" />
+            <element signature="e#11314#11505#0#PHP" expanded="false" />
+            <element signature="e#11644#13052#0#PHP" expanded="false" />
+            <element signature="e#13168#13976#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
