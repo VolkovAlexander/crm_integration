@@ -4,9 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "65bcb04f22eea775315e58ebf4816158",
-    "content-hash": "a5e40b9c07b9fe3a7f5a3f8d99656b46",
+    "hash": "95f3252975ed2e2e3e49d3c7e1eac741",
+    "content-hash": "e9fedad43ef4bb561132a8e1372b32fe",
     "packages": [
+        {
+            "name": "megaplan/simple_client",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/megaplan/simple_client.git",
+                "reference": "1197f608885ee26d7fa65d59e408a9ac22d6d4af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/megaplan/simple_client/zipball/1197f608885ee26d7fa65d59e408a9ac22d6d4af",
+                "reference": "1197f608885ee26d7fa65d59e408a9ac22d6d4af",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^5.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Megaplan\\SimpleClient\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "megaplan",
+                    "email": "dev@megaplan.ru"
+                }
+            ],
+            "description": "Simple API client for Megaplan",
+            "time": "2016-10-19 13:02:14"
+        },
         {
             "name": "retailcrm/api-client-php",
             "version": "4.0.0",
@@ -100,7 +136,9 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "megaplan/simple_client": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,6 +1,7 @@
 {
     "require": {
         "retailcrm/api-client-php": "~4.0.0",
-        "zadarma/user-api-v1": "^1.0"
+        "zadarma/user-api-v1": "^1.0",
+        "megaplan/simple_client": "dev-master"
     }
 }
