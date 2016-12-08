@@ -113,7 +113,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             );
 
             $disposition = CommonFunctions::nullableFromArray($params, 'disposition');
-            if($disposition !== 'answered' && !empty($disposition)) {
+            if ($disposition !== 'answered' && !empty($disposition)) {
                 $this->Log->notice($disposition . '<br><pre>' . print_r($params, true) . '</pre>');
             }
 
@@ -197,6 +197,12 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 case self::ZD_CALLBACK_EVENT_OUT_END:
                     $phone = CommonFunctions::nullableFromArray($params, 'destination');
                     $code = CommonFunctions::nullableFromArray($params, 'internal');
+
+                    if (!in_array($code, $internal_codes)) {
+                        $phone = CommonFunctions::nullableFromArray($params, 'internal');
+                        $code = CommonFunctions::nullableFromArray($params, 'destination');
+                    }
+
                     $type = 'hangup';
 
                     if (in_array($code, $internal_codes)) {
