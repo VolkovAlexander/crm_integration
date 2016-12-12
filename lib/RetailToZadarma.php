@@ -419,14 +419,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
      */
     private function uploadCallsToCrm()
     {
-        $calls_to_upload = $this->Mysql->table('retail')->select([
-            'status' => self::CALL_STATUS_FINISHED
-        ])->get();
+        $calls_to_upload = $this->Mysql->table('retail')
+            ->where('status', self::CALL_STATUS_FINISHED)
+            ->select('*')
+            ->get();
 
         if (!empty($calls_to_upload)) {
             foreach ($calls_to_upload as $Call) {
-                $this->Log->notice('new call', print_r($Call, true));
-
                 $pbx_call_id = $Call->call_id;
                 $call_record_link = $this->getCallRecord(null, $pbx_call_id);
 
