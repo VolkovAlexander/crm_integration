@@ -27,7 +27,8 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
     <tr>
         <td class="col-date">Date</td>
         <td>Status</td>
-        <td>Additional</td>
+        <td>Start</td>
+        <td>End</td>
     </tr>
     </thead>
     <tbody>
@@ -36,7 +37,8 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
                 <tr>
                     <td><?= date('d-M-y H:i', $Row->created_at) ?></td>
                     <td><?= $Row->status ?></td>
-                    <td><pre><?= print_r(json_decode($Row->data, true), true) ?></pre></td>
+                    <td><pre><?= print_r(json_decode($Row->start_data, true), true) ?></pre></td>
+                    <td><pre><?= print_r(json_decode($Row->end_data, true), true) ?></pre></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>

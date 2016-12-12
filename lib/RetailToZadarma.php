@@ -52,9 +52,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             $this->Mysql->statement(sprintf("
             CREATE TABLE IF NOT EXISTS %s.retail
             (id INT NOT NULL AUTO_INCREMENT,
-            client_id INT,
-            zd_id VARCHAR(64) NOT NULL,
-            data TEXT,
+            client_id VARCHAR(128) NOT NULL,
+            call_id VARCHAR(128) NOT NULL,
+            start_data TEXT,
+            end_data TEXT,
             status INT NOT NULL DEFAULT 0,
             created_at INT NOT NULL DEFAULT 0,
             updated_at INT NOT NULL DEFAULT 0,
@@ -147,15 +148,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $code = null;
         $type = null;
 
-        $this->Mysql->table('retail')->insert([
-            'client_id' => CommonFunctions::nullableFromArray($this->crm_config, 'username'),
-            'zd_id' => CommonFunctions::nullableFromArray($params, 'pbx_call_id'),
-            'status' => 0,
-            'data' => json_encode($params),
-            'created_at' => strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))
-        ]);
-
-        $this->Log->notice($this->Mysql->pdo()->lastInsertId());
+        $this->writeInfoAboutCallToDb($params);
 
         try {
             $internal_codes = CommonFunctions::nullableFromArray(
@@ -418,4 +411,47 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         return $result;
     }
+
+    /**
+     * Запись данных о входящем звонке в базу данных
+     * @param $params
+     * @return $this|array|null|string
+     */
+    private function writeInfoAboutCallToDb($params)
+    {
+        $result = null;
+
+        $pbx_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
+        $event = CommonFunctions::nullableFromArray($params, 'event');
+
+        if (!empty($pbx_id)) {
+            switch ($event) {
+                case self::ZD_CALLBACK_EVENT_START:
+                case self::ZD_CALLBACK_EVENT_OUT_START:
+                    $result = $this->Mysql->table('retail')->insert([
+                        'client_id' => CommonFunctions::nullableFromArray($this->crm_config, 'username'),
+                        'call_id' => $pbx_id,
+                        'status' => self::CALL_STATUS_STARTED,
+                        'start_data' => json_encode($params),
+                        'created_at' => strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))
+                    ]);
+                    break;
+                case self::ZD_CALLBACK_EVENT_END:
+                case self::ZD_CALLBACK_EVENT_OUT_END:
+                    $result = $this->Mysql->table('retail')->where('call_id', $pbx_id)->update([
+                        'status' => self::CALL_STATUS_FINISHED,
+                        'end_data' => json_encode($params),
+                        'updated_at' => strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))
+                    ]);
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        return $result;
+    }
+
+    const CALL_STATUS_STARTED = 0;
+    const CALL_STATUS_FINISHED = 1;
 }
