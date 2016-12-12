@@ -176,6 +176,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     } else {
                         $codes = [$code];
                     }
+
+                    echo json_encode([
+                        'redirect' => $codes
+                    ]);
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'destination');
