@@ -195,11 +195,11 @@ class AbstractZadarmaIntegration
 
         if (!empty($this->Mysql)) {
             try {
-                $this->Mysql->statement(sprintf("
-                    CREATE DATABASE IF NOT EXISTS %s CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
-                "), CommonFunctions::nullableFromArray($this->mysql_config, 'user'));
+                $this->Mysql->statement(sprintf("CREATE DATABASE IF NOT EXISTS %s CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'"),
+                    CommonFunctions::nullableFromArray($this->mysql_config, 'user')
+                );
 
-                $config['database'] = 'crm_integration';
+                $config['database'] = CommonFunctions::nullableFromArray($this->mysql_config, 'user');
                 $connection = new \Pixie\Connection('mysql', $config);
                 $this->Mysql = new \Pixie\QueryBuilder\QueryBuilderHandler($connection);
             } catch (\PDOException $e) {
