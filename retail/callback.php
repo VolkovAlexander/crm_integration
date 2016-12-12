@@ -27,11 +27,6 @@ if ($callStart && ($remoteIp == ZD_IP)) {
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
 
-        echo json_encode(array(
-            'redirect' => 100,
-            'caller_name' => 'TestName'
-        ));
-
         exit();
     }
 }
