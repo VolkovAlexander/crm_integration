@@ -29,6 +29,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     /** @var \Pixie\QueryBuilder\QueryBuilderHandler $cMysql */
     public $Mysql = null;
 
+    /**
+     * @inheritdoc
+     */
     protected function initCrmClient()
     {
         $url = CommonFunctions::nullableFromArray($this->crm_config, 'url');
@@ -38,6 +41,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $this->cCrm = new \RetailCrm\ApiClient($url, $key);
     }
 
+    /**
+     * @inheritdoc
+     */
     protected function initMysqlClient()
     {
         parent::initMysqlClient();

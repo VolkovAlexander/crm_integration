@@ -195,7 +195,7 @@ class AbstractZadarmaIntegration
 
         if (!empty($this->Mysql)) {
             try {
-                $this->Mysql->statement(sprintf("CREATE DATABASE IF NOT EXISTS %s CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'"),
+                $this->Mysql->statement(sprintf('CREATE DATABASE IF NOT EXISTS %s'),
                     CommonFunctions::nullableFromArray($this->mysql_config, 'user')
                 );
 
