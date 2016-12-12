@@ -117,6 +117,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $code = null;
         $type = null;
 
+        $this->Log->notice('New call event', $params);
+
         try {
             $internal_codes = CommonFunctions::nullableFromArray(
                 json_decode(
