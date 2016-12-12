@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="" />
+    <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" afterPath="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,16 +28,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="257">
-              <caret line="358" column="23" lean-forward="true" selection-start-line="358" selection-start-column="23" selection-end-line="358" selection-end-column="23" />
+            <state relative-caret-position="997">
+              <caret line="365" column="30" lean-forward="true" selection-start-line="365" selection-start-column="30" selection-end-line="365" selection-end-column="30" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#820#1127#0#PHP" expanded="false" />
                 <element signature="e#1991#2696#0#PHP" expanded="false" />
                 <element signature="e#2791#4106#0#PHP" expanded="false" />
+                <element signature="e#4256#7119#0#PHP" expanded="false" />
                 <element signature="e#7285#8580#0#PHP" expanded="false" />
                 <element signature="e#8703#8894#0#PHP" expanded="false" />
                 <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -81,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="100" column="23" lean-forward="false" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
+            <state relative-caret-position="254">
+              <caret line="183" column="90" lean-forward="false" selection-start-line="183" selection-start-column="90" selection-end-line="183" selection-end-column="90" />
               <folding>
                 <element signature="e#6#71#0#PHP" expanded="true" />
                 <element signature="e#651#1627#0#PHP" expanded="false" />
@@ -156,9 +159,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/mysql.php" />
         <option value="$PROJECT_DIR$/retail/index.php" />
-        <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
         <option value="$PROJECT_DIR$/retail/events.php" />
         <option value="$PROJECT_DIR$/lib/RetailToZadarma.php" />
+        <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
       </list>
     </option>
   </component>
@@ -317,12 +320,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="13728000" />
+      <workItem from="1481523273267" duration="13874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118777000" />
+    <option name="totallyTimeSpent" value="118923000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -431,6 +434,7 @@
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -463,6 +467,7 @@
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -483,6 +488,7 @@
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -503,6 +509,7 @@
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -523,6 +530,7 @@
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -697,18 +705,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="100" column="23" lean-forward="false" selection-start-line="100" selection-start-column="23" selection-end-line="100" selection-end-column="23" />
-          <folding>
-            <element signature="e#6#71#0#PHP" expanded="true" />
-            <element signature="e#651#1627#0#PHP" expanded="false" />
-            <element signature="e#3669#3938#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/usmanhalalit/pixie/src/Pixie/QueryBuilder/QueryBuilderHandler.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -727,13 +723,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="358" column="23" lean-forward="true" selection-start-line="358" selection-start-column="23" selection-end-line="358" selection-end-column="23" />
+        <state relative-caret-position="997">
+          <caret line="365" column="30" lean-forward="true" selection-start-line="365" selection-start-column="30" selection-end-line="365" selection-end-column="30" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
             <element signature="e#2791#4106#0#PHP" expanded="false" />
+            <element signature="e#4256#7119#0#PHP" expanded="false" />
             <element signature="e#7285#8580#0#PHP" expanded="false" />
             <element signature="e#8703#8894#0#PHP" expanded="false" />
             <element signature="e#9033#10441#0#PHP" expanded="false" />
@@ -741,6 +738,18 @@
             <element signature="e#13177#14480#0#PHP" expanded="false" />
             <element signature="e#14559#15674#0#PHP" expanded="false" />
             <marker date="1481539056958" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="183" column="90" lean-forward="false" selection-start-line="183" selection-start-column="90" selection-end-line="183" selection-end-column="90" />
+          <folding>
+            <element signature="e#6#71#0#PHP" expanded="true" />
+            <element signature="e#651#1627#0#PHP" expanded="false" />
+            <element signature="e#3669#3938#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

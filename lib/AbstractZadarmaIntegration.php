@@ -181,6 +181,7 @@ class AbstractZadarmaIntegration
     {
         $config = array(
             'driver' => 'mysql',
+            'database' => CommonFunctions::nullableFromArray($this->mysql_config, 'user'),
             'host' => CommonFunctions::nullableFromArray($this->mysql_config, 'host'),
             'username' => CommonFunctions::nullableFromArray($this->mysql_config, 'user'),
             'password' => CommonFunctions::nullableFromArray($this->mysql_config, 'password'),
