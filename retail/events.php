@@ -5,8 +5,6 @@ require './../lib/RetailToZadarma.php';
 $RetailToZadarma = new \lib\RetailToZadarma();
 $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
 
-print_r($data);
-
 ?>
 <meta http-equiv="refresh" content="3">
 <style>
@@ -38,7 +36,7 @@ print_r($data);
                 <tr>
                     <td><?= date('d-M-y H:i', $Row->created_at) ?></td>
                     <td><?= $Row->status ?></td>
-                    <td><pre><?= print_r(json_encode($Row->data, true), true) ?></pre></td>
+                    <td><pre><?= print_r(json_decode($Row->data, true), true) ?></pre></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
