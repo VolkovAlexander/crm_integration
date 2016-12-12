@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/RetailToZadarma.php" afterPath="$PROJECT_DIR$/lib/RetailToZadarma.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/retail/events.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/index.php" afterPath="$PROJECT_DIR$/retail/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -28,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="542">
-              <caret line="157" column="64" lean-forward="false" selection-start-line="157" selection-start-column="64" selection-end-line="157" selection-end-column="64" />
+            <state relative-caret-position="218">
+              <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#820#1127#0#PHP" expanded="false" />
@@ -49,28 +51,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryBuilderHandler.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/vendor/usmanhalalit/pixie/src/Pixie/QueryBuilder/QueryBuilderHandler.php">
+      <file leaf-file-name="logs.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/retail/logs.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="312" column="21" lean-forward="false" selection-start-line="312" selection-start-column="21" selection-end-line="312" selection-end-column="21" />
+            <state relative-caret-position="414">
+              <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
+      <file leaf-file-name="events.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/retail/events.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="572">
-              <caret line="201" column="101" lean-forward="false" selection-start-line="201" selection-start-column="101" selection-end-line="201" selection-end-column="101" />
-              <folding>
-                <element signature="e#6#71#0#PHP" expanded="true" />
-                <element signature="e#651#1627#0#PHP" expanded="false" />
-                <element signature="e#1838#2536#0#PHP" expanded="false" />
-                <element signature="e#2714#3761#0#PHP" expanded="false" />
-                <element signature="e#3895#4164#0#PHP" expanded="false" />
-              </folding>
+            <state relative-caret-position="450">
+              <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/retail/index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="716">
+              <caret line="111" column="27" lean-forward="true" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -126,7 +132,6 @@
         <option value="$PROJECT_DIR$/megaplan/callback.php" />
         <option value="$PROJECT_DIR$/retail/make-call.php" />
         <option value="$PROJECT_DIR$/lib/CommonFunctions.php" />
-        <option value="$PROJECT_DIR$/retail/index.php" />
         <option value="$PROJECT_DIR$/config/retail.php" />
         <option value="$PROJECT_DIR$/config/zadarma.php" />
         <option value="$PROJECT_DIR$/composer.json" />
@@ -134,6 +139,8 @@
         <option value="$PROJECT_DIR$/config/mysql.php" />
         <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
         <option value="$PROJECT_DIR$/lib/RetailToZadarma.php" />
+        <option value="$PROJECT_DIR$/retail/events.php" />
+        <option value="$PROJECT_DIR$/retail/index.php" />
       </list>
     </option>
   </component>
@@ -197,21 +204,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm_integration" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="crm_integration" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="retail" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -226,16 +219,17 @@
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.smarty" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/megaplan" />
-      <recent name="C:\WTServer\WWW\retail.zadarma\crm_integration\config" />
-      <recent name="C:\WTServer\WWW\CRM-Zadarma" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/retail" />
       <recent name="$PROJECT_DIR$/retail/lib" />
       <recent name="C:\WTServer\WWW\retail.zadarma\crm_integration\assets" />
       <recent name="C:\WTServer\WWW\CRM-Zadarma\lib" />
+      <recent name="C:\WTServer\WWW\CRM-Zadarma" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/retail" />
+      <recent name="$PROJECT_DIR$/megaplan" />
+      <recent name="C:\WTServer\WWW\retail.zadarma\crm_integration\config" />
       <recent name="C:\WTServer\WWW\CRM-Zadarma" />
     </key>
   </component>
@@ -319,12 +313,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="5233000" />
+      <workItem from="1481523273267" duration="5561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="110282000" />
+    <option name="totallyTimeSpent" value="110610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -374,20 +368,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1548">
-          <caret line="106" column="49" lean-forward="false" selection-start-line="106" selection-start-column="49" selection-end-line="106" selection-end-column="49" />
-          <folding>
-            <element signature="e#6#71#0#PHP" expanded="true" />
-            <element signature="e#651#1627#0#PHP" expanded="false" />
-            <element signature="e#1838#2536#0#PHP" expanded="false" />
-            <element signature="e#2714#3761#0#PHP" expanded="false" />
-            <element signature="e#3895#4164#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/retail/callback.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -597,13 +577,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/retail.bkp" />
-    <entry file="file://$PROJECT_DIR$/retail/logs.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.cache/.fr-Uf1WcR/index.html" />
     <entry file="file://$PROJECT_DIR$/megaplan/widget.php" />
     <entry file="file://$PROJECT_DIR$/vendor/megaplan/simple_client/src/Client.php">
@@ -632,13 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="24" column="61" lean-forward="true" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/retail/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="28" column="5" lean-forward="false" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -731,8 +697,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="542">
-          <caret line="157" column="64" lean-forward="false" selection-start-line="157" selection-start-column="64" selection-end-line="157" selection-end-column="64" />
+        <state relative-caret-position="218">
+          <caret line="139" column="51" lean-forward="true" selection-start-line="139" selection-start-column="51" selection-end-line="139" selection-end-column="51" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
@@ -745,6 +711,30 @@
             <element signature="e#14542#15350#0#PHP" expanded="false" />
             <marker date="1481528523372" expanded="true" signature="1319:1700" ph="CREATE TABLE... IF" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retail/logs.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="28" column="25" lean-forward="true" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retail/events.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="11" lean-forward="false" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/retail/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="716">
+          <caret line="111" column="27" lean-forward="true" selection-start-line="111" selection-start-column="27" selection-end-line="111" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
