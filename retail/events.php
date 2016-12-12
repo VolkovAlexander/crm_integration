@@ -3,7 +3,7 @@ require './../vendor/autoload.php';
 require './../lib/RetailToZadarma.php';
 
 $RetailToZadarma = new \lib\RetailToZadarma();
-$data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
+$data = $RetailToZadarma->Mysql->table('retail')->select('*')->orderBy('id', 'DESC')->get();
 
 ?>
 <meta http-equiv="refresh" content="5">
