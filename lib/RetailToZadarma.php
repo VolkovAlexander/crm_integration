@@ -425,7 +425,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         if (!empty($calls_to_upload)) {
             foreach ($calls_to_upload as $Call) {
-                $this->Log->notice('new call', $Call);
+                $this->Log->notice('new call', print_r($Call, true));
 
                 $pbx_call_id = $Call->call_id;
                 $call_record_link = $this->getCallRecord(null, $pbx_call_id);
