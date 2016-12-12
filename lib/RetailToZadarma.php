@@ -175,11 +175,9 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         }
                     } else {
                         $codes = [$code];
-                        /*
                         echo json_encode(array(
-                            'redirect' => $code,
+                            'redirect' => [100,101],
                         ));
-                        */
                     }
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
