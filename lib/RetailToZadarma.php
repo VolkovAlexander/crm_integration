@@ -203,7 +203,11 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
             $this->uploadCallsToCrm();
         } catch (\Exception $e) {
-            $this->Log->error('Can\'t send information about incoming call to crm', $e->getMessage());
+            $this->Log->error('Can\'t send information about incoming call to crm - ' . $e->getMessage(), [
+                'phone' => $phone,
+                'type' => $type,
+                'codes' => $codes
+            ]);
         }
 
         return $result;
