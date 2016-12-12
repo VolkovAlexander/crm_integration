@@ -358,6 +358,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     {
         $result = null;
 
+        $this->Log->notice('new call event', $params);
+
         $pbx_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
         $event = CommonFunctions::nullableFromArray($params, 'event');
 
