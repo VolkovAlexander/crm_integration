@@ -34,11 +34,11 @@ print_r($data);
     </thead>
     <tbody>
         <?php if(!empty($data)): ?>
-            <?php foreach($data as $row): ?>
+            <?php foreach($data as $Row): ?>
                 <tr>
-                    <td><?= date('d-M-y H:i', $row['created_at']) ?></td>
-                    <td><?= $row['status'] ?></td>
-                    <td><pre><?= print_r(json_encode($row['data'], true), true) ?></pre></td>
+                    <td><?= date('d-M-y H:i', $Row->created_at) ?></td>
+                    <td><?= $Row->status ?></td>
+                    <td><pre><?= print_r(json_encode($Row->data, true), true) ?></pre></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
