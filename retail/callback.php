@@ -16,9 +16,6 @@ $callerId = filter_input(INPUT_POST, 'caller_id');
 $calledDid = filter_input(INPUT_POST, 'called_did');
 $callStart = filter_input(INPUT_POST, 'call_start');
 
-error_log('CALLBACK DATA: ' . print_r($_POST, true));
-
-
 define('ZD_IP', '185.45.152.42');
 
 if ($callStart && ($remoteIp == ZD_IP)) {

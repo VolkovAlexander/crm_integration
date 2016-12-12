@@ -48,10 +48,8 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->orderBy('id', 'DE
             <tr>
                 <td><?= date('H:i', $Row->created_at) ?></td>
                 <td>
-                    <pre><?= print_r(json_decode($Row->start_data, true), true) ?></pre>
-                </td>
-                <td>
-                    <pre><?= print_r(json_decode($Row->end_data, true), true) ?></pre>
+                    <pre><b>Start data: </b><br><?= print_r(json_decode($Row->start_data, true), true) ?></pre>
+                    <pre><b>Finish data: </b><br><?= print_r(json_decode($Row->end_data, true), true) ?></pre>
                 </td>
             </tr>
         <?php endforeach; ?>
