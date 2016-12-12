@@ -195,9 +195,9 @@ class AbstractZadarmaIntegration
 
         if (!empty($this->Mysql)) {
             try {
-                $this->Mysql->statement(sprintf('CREATE DATABASE IF NOT EXISTS %s'),
+                $this->Mysql->statement(sprintf('CREATE DATABASE IF NOT EXISTS %s',
                     CommonFunctions::nullableFromArray($this->mysql_config, 'user')
-                );
+                ));
 
                 $config['database'] = CommonFunctions::nullableFromArray($this->mysql_config, 'user');
                 $connection = new \Pixie\Connection('mysql', $config);
