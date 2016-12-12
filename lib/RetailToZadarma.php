@@ -148,6 +148,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $codes = null;
         $type = null;
 
+        $this->Log->notice('new call event', $params);
+
         $this->writeInfoAboutCallToDb($params);
 
         try {
@@ -357,8 +359,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     private function writeInfoAboutCallToDb($params)
     {
         $result = null;
-
-        $this->Log->notice('new call event', $params);
 
         $pbx_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
         $event = CommonFunctions::nullableFromArray($params, 'event');
