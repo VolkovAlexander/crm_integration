@@ -6,6 +6,7 @@ $RetailToZadarma = new \lib\RetailToZadarma();
 $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
 
 ?>
+<meta http-equiv="refresh" content="5">
 <style>
     table, tr, td {
         border: 1px solid black;
