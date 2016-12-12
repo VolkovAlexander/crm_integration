@@ -173,7 +173,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         }
                     }
 
-                    $codes = $code;
+                    $codes = [$code];
 
                     /** Необходимо для верного редиректа внутри АТС Zadarma */
                     echo json_encode(array(
