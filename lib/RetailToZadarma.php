@@ -193,6 +193,12 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     break;
             }
 
+            $this->Log->notice('New call event recorded', [
+                'type' => $type,
+                'phone' => $phone,
+                'code' => $codes,
+            ]);
+
             $result = $this->cCrm->telephonyCallEvent(
                 $phone, $type, $codes, null
             );
