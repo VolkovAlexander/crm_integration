@@ -106,12 +106,12 @@ try {
             </form>
         </div>
         <div class="col-md-9">
-            <iframe src="events.php" style="width: 100%; height: 780px" frameborder="no">
-            </iframe>
             <?php if(isset($_GET['logs'])): ?>
-                <iframe src="logs.php" style="width: 100%; height: 780px" frameborder="no">
+                <iframe src="logs.php" style="width: 100%; height: 380px" frameborder="no">
                 </iframe>
             <?php endif; ?>
+            <iframe src="events.php" style="width: 100%; height: 780px" frameborder="no">
+            </iframe>
         </div>
     </div>
 </div>

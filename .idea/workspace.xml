@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/events.php" afterPath="$PROJECT_DIR$/retail/events.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/index.php" afterPath="$PROJECT_DIR$/retail/index.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -60,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="events.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="events.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/retail/events.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
@@ -70,11 +70,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/retail/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="42" column="118" lean-forward="true" selection-start-line="42" selection-start-column="118" selection-end-line="42" selection-end-column="118" />
+            <state relative-caret-position="734">
+              <caret line="113" column="21" lean-forward="false" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
               <folding>
                 <element signature="n#style#0;n#iframe#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#iframe#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -140,9 +140,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/config/mysql.php" />
         <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
-        <option value="$PROJECT_DIR$/retail/index.php" />
         <option value="$PROJECT_DIR$/lib/RetailToZadarma.php" />
         <option value="$PROJECT_DIR$/retail/events.php" />
+        <option value="$PROJECT_DIR$/retail/index.php" />
       </list>
     </option>
   </component>
@@ -315,12 +315,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="10788000" />
+      <workItem from="1481523273267" duration="10931000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115837000" />
+    <option name="totallyTimeSpent" value="115980000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,14 +707,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retail/index.php">
+    <entry file="file://$PROJECT_DIR$/retail/events.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="42" column="118" lean-forward="true" selection-start-line="42" selection-start-column="118" selection-end-line="42" selection-end-column="118" />
-          <folding>
-            <element signature="n#style#0;n#iframe#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#iframe#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="90">
+          <caret line="5" column="82" lean-forward="false" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="82" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,11 +735,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/retail/events.php">
+    <entry file="file://$PROJECT_DIR$/retail/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="82" lean-forward="false" selection-start-line="5" selection-start-column="82" selection-end-line="5" selection-end-column="82" />
-          <folding />
+        <state relative-caret-position="734">
+          <caret line="113" column="21" lean-forward="false" selection-start-line="113" selection-start-column="21" selection-end-line="113" selection-end-column="21" />
+          <folding>
+            <element signature="n#style#0;n#iframe#0;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#iframe#1;n#div#2;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
