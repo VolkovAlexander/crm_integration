@@ -49,8 +49,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         parent::initMysqlClient();
 
         try {
-            $this->Mysql->statement("
-            CREATE TABLE IF NOT EXISTS crm_integration.retail
+            $this->Mysql->statement(sprintf("
+            CREATE TABLE IF NOT EXISTS %s.retail
             (id INT NOT NULL AUTO_INCREMENT,
             client_id INT,
             zd_id VARCHAR(64) NOT NULL,
@@ -59,7 +59,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             created_at INT NOT NULL DEFAULT 0,
             updated_at INT NOT NULL DEFAULT 0,
             PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8
-        ");
+        ", CommonFunctions::nullableFromArray($this->mysql_config, 'user')));
         } catch (\PDOException $e) {
             $this->Log->error('Can\'t create table', $e->getMessage());
         }
