@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/lib/RetailToZadarma.php" afterPath="$PROJECT_DIR$/lib/RetailToZadarma.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/callback.php" afterPath="$PROJECT_DIR$/retail/callback.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,20 +31,20 @@
       <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="730">
-              <caret line="178" column="48" lean-forward="false" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
+            <state relative-caret-position="622">
+              <caret line="181" column="26" lean-forward="false" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#820#1127#0#PHP" expanded="false" />
                 <element signature="e#1991#2696#0#PHP" expanded="false" />
-                <element signature="e#7503#8798#0#PHP" expanded="false" />
-                <element signature="e#8921#9112#0#PHP" expanded="false" />
-                <element signature="e#9251#10659#0#PHP" expanded="false" />
-                <element signature="e#10775#11583#0#PHP" expanded="false" />
-                <element signature="e#11719#13216#0#PHP" expanded="false" />
-                <element signature="e#13339#14642#0#PHP" expanded="false" />
-                <element signature="e#14721#15836#0#PHP" expanded="false" />
-                <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+                <element signature="e#7557#8852#0#PHP" expanded="false" />
+                <element signature="e#8975#9166#0#PHP" expanded="false" />
+                <element signature="e#9305#10713#0#PHP" expanded="false" />
+                <element signature="e#10829#11637#0#PHP" expanded="false" />
+                <element signature="e#11773#13270#0#PHP" expanded="false" />
+                <element signature="e#13393#14696#0#PHP" expanded="false" />
+                <element signature="e#14775#15890#0#PHP" expanded="false" />
+                <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
@@ -215,6 +214,72 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retailcrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-client-php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="vendor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="retailcrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="api-client-php" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="lib" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="RetailCrm" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="crm_integration" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="retail" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -338,12 +403,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="18716000" />
+      <workItem from="1481523273267" duration="18864000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="123765000" />
+    <option name="totallyTimeSpent" value="123913000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -453,14 +518,14 @@
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -487,14 +552,14 @@
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -507,14 +572,14 @@
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -527,14 +592,14 @@
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -547,14 +612,14 @@
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -591,13 +656,6 @@
     <entry file="file://$PROJECT_DIR$/install.php" />
     <entry file="file://$PROJECT_DIR$/assets/bootstrap/css/bootstrap-responsive.css" />
     <entry file="file://$PROJECT_DIR$/assets/bootstrap/css/bootstrap.css" />
-    <entry file="file://$PROJECT_DIR$/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="1432" column="33" lean-forward="true" selection-start-line="1432" selection-start-column="33" selection-end-line="1432" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/log.data" />
     <entry file="file://$PROJECT_DIR$/lib/Log.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -751,22 +809,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="1638" column="20" lean-forward="false" selection-start-line="1638" selection-start-column="20" selection-end-line="1638" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="730">
-          <caret line="178" column="48" lean-forward="false" selection-start-line="178" selection-start-column="48" selection-end-line="178" selection-end-column="48" />
+        <state relative-caret-position="622">
+          <caret line="181" column="26" lean-forward="false" selection-start-line="181" selection-start-column="26" selection-end-line="181" selection-end-column="26" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
             <element signature="e#1991#2696#0#PHP" expanded="false" />
-            <element signature="e#7503#8798#0#PHP" expanded="false" />
-            <element signature="e#8921#9112#0#PHP" expanded="false" />
-            <element signature="e#9251#10659#0#PHP" expanded="false" />
-            <element signature="e#10775#11583#0#PHP" expanded="false" />
-            <element signature="e#11719#13216#0#PHP" expanded="false" />
-            <element signature="e#13339#14642#0#PHP" expanded="false" />
-            <element signature="e#14721#15836#0#PHP" expanded="false" />
-            <marker date="1481545637540" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <element signature="e#7557#8852#0#PHP" expanded="false" />
+            <element signature="e#8975#9166#0#PHP" expanded="false" />
+            <element signature="e#9305#10713#0#PHP" expanded="false" />
+            <element signature="e#10829#11637#0#PHP" expanded="false" />
+            <element signature="e#11773#13270#0#PHP" expanded="false" />
+            <element signature="e#13393#14696#0#PHP" expanded="false" />
+            <element signature="e#14775#15890#0#PHP" expanded="false" />
+            <marker date="1481545786525" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
