@@ -151,7 +151,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $this->Log->notice('new call event', $params);
 
         $this->writeInfoAboutCallToDb($params);
-        $this->getSipRedirections();
 
         try {
             $event = CommonFunctions::nullableFromArray($params, 'event');
@@ -162,23 +161,24 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = CommonFunctions::nullableFromArray(CommonFunctions::nullableFromArray($this->cCrm->telephonyCallManager($phone, 0), 'manager'), 'code');
                     $type = 'in';
 
-                    $codes = [];
                     if (empty($code)) {
                         $internal_codes = $this->getInternalCodes(true);
 
                         if (!empty($internal_codes)) {
                             foreach ($internal_codes as $internal_code) {
                                 if (!empty(CommonFunctions::nullableFromArray($internal_code, 'manager'))) {
-                                    $codes[] = $internal_code['code'];
+                                    $code = $internal_code['code'];
                                 }
                             }
                         }
-                    } else {
-                        $codes = [$code];
-                        echo json_encode(array(
-                            'redirect' => [100,101],
-                        ));
                     }
+
+                    $codes = $code;
+
+                    /** Необходимо для верного редиректа внутри АТС Zadarma */
+                    echo json_encode(array(
+                        'redirect' => $code
+                    ));
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'destination');
