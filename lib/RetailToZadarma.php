@@ -195,22 +195,18 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     break;
             }
 
-            $this->Log->notice('New call event recorded', [
-                'type' => $type,
-                'phone' => $phone,
-                'code' => $codes,
-            ]);
+            if ($event !== self::ZD_CALLBACK_EVENT_INTERNAL) {
+                $result = $this->cCrm->telephonyCallEvent(
+                    $phone, $type, $codes, null
+                );
 
-            $result = $this->cCrm->telephonyCallEvent(
-                $phone, $type, $codes, null
-            );
-
-            $this->validateCrmResponse($result);
-            $this->Log->notice('New call event recorded', [
-                'type' => $type,
-                'phone' => $phone,
-                'code' => $codes,
-            ]);
+                $this->validateCrmResponse($result);
+                $this->Log->notice('New call event recorded', [
+                    'type' => $type,
+                    'phone' => $phone,
+                    'code' => $codes,
+                ]);
+            }
 
             $this->uploadCallsToCrm();
         } catch (\Exception $e) {
@@ -407,11 +403,11 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $end_data = json_decode($Call->end_data, true);
 
         $type = CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_START ? 'in' : (
-            CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? 'out' : null
+        CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? 'out' : null
         );
 
         $phone = CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_START ? CommonFunctions::nullableFromArray($end_data, 'caller_id') : (
-            CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? CommonFunctions::nullableFromArray($end_data, 'destination') : null
+        CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? CommonFunctions::nullableFromArray($end_data, 'destination') : null
         );
 
         return [
@@ -445,7 +441,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                 $result = $this->cCrm->telephonyCallsUpload([$data]);
 
-                if($result->isSuccessful()) {
+                if ($result->isSuccessful()) {
                     $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([
                         'status' => self::CALL_STATUS_SENT
                     ]);
