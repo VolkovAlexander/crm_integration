@@ -125,6 +125,15 @@ class AbstractZadarmaIntegration
     }
 
     /**
+     * Получение переадрисаций внутри АТС
+     */
+    public function getSipRedirections()
+    {
+        $response = $this->cZadarma->call('/v1/sip/redirection/', [], 'get');
+        $this->Log->notice($response);
+    }
+
+    /**
      * Валидация ответа из Zadarma
      * @param string $response
      * @return bool

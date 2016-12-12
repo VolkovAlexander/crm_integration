@@ -151,6 +151,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $this->Log->notice('new call event', $params);
 
         $this->writeInfoAboutCallToDb($params);
+        $this->getSipRedirections();
 
         try {
             $event = CommonFunctions::nullableFromArray($params, 'event');
