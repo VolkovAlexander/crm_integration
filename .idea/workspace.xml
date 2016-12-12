@@ -31,8 +31,8 @@
       <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="423" column="20" lean-forward="false" selection-start-line="423" selection-start-column="14" selection-end-line="423" selection-end-column="20" />
+            <state relative-caret-position="194">
+              <caret line="435" column="69" lean-forward="false" selection-start-line="435" selection-start-column="69" selection-end-line="435" selection-end-column="69" />
               <folding>
                 <element signature="e#6#66#0#PHP" expanded="true" />
                 <element signature="e#820#1127#0#PHP" expanded="false" />
@@ -43,7 +43,7 @@
                 <element signature="e#8910#10318#0#PHP" expanded="false" />
                 <element signature="e#10434#11242#0#PHP" expanded="false" />
                 <element signature="e#11378#12875#0#PHP" expanded="false" />
-                <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+                <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
               </folding>
             </state>
           </provider>
@@ -116,8 +116,8 @@
       <find>кноп</find>
       <find>$config</find>
       <find>send information about incoming call to crm</find>
-      <find>$this-&gt;Log-&gt;notice</find>
       <find>select</find>
+      <find>$this-&gt;Log-&gt;notice</find>
     </findStrings>
     <dirStrings>
       <dir>C:\WTServer\WWW\CRM-Zadarma</dir>
@@ -318,12 +318,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="12805000" />
+      <workItem from="1481523273267" duration="12899000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="117854000" />
+    <option name="totallyTimeSpent" value="117948000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -437,7 +437,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -468,7 +468,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -487,7 +487,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -506,7 +506,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -525,7 +525,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>
@@ -723,8 +723,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="423" column="20" lean-forward="false" selection-start-line="423" selection-start-column="14" selection-end-line="423" selection-end-column="20" />
+        <state relative-caret-position="194">
+          <caret line="435" column="69" lean-forward="false" selection-start-line="435" selection-start-column="69" selection-end-line="435" selection-end-column="69" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#820#1127#0#PHP" expanded="false" />
@@ -735,7 +735,7 @@
             <element signature="e#8910#10318#0#PHP" expanded="false" />
             <element signature="e#10434#11242#0#PHP" expanded="false" />
             <element signature="e#11378#12875#0#PHP" expanded="false" />
-            <marker date="1481538258915" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
+            <marker date="1481538358495" expanded="true" signature="1319:1746" ph="CREATE TABLE... IF" />
           </folding>
         </state>
       </provider>

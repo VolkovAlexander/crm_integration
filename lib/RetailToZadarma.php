@@ -433,11 +433,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     'recordUrl' => $call_record_link
                 ]);
 
-                $this->Log->notice('new call upload', $data);
-
                 $result = $this->cCrm->telephonyCallsUpload([$data]);
-
-                $this->Log->notice('Call upload', $result);
 
                 if ($result->isSuccessful()) {
                     $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([
