@@ -443,6 +443,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([
                         'status' => self::CALL_STATUS_SENT
                     ]);
+                } else {
+                    $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([
+                        'status' => self::CALL_STATUS_CANT_SEND
+                    ]);
                 }
             }
         }
@@ -451,4 +455,5 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     const CALL_STATUS_STARTED = 0;
     const CALL_STATUS_FINISHED = 1;
     const CALL_STATUS_SENT = 2;
+    const CALL_STATUS_CANT_SEND = 3;
 }

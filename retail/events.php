@@ -29,6 +29,10 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->orderBy('id', 'DE
         background-color: lightgreen;
     }
 
+    tr.status-3 {
+        background-color: lightgray;
+    }
+
     td {
         padding: 1px 10px;
     }
