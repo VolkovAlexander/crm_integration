@@ -16,7 +16,7 @@ $callerId = filter_input(INPUT_POST, 'caller_id');
 $calledDid = filter_input(INPUT_POST, 'called_did');
 $callStart = filter_input(INPUT_POST, 'call_start');
 
-error_log('hired callback.php script!');
+error_log('CALLBACK HIRED!');
 
 define('ZD_IP', '185.45.152.42');
 
@@ -28,7 +28,11 @@ if ($callStart && ($remoteIp == ZD_IP)) {
     if ($signature == $signatureTest) {
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
+    } else {
+        error_log('CALLBACK: ' . $signature . ' ' . $signatureTest);
     }
+} else {
+    error_log('CALLBACK: ' . $callStart . ' ' . $remoteIp);
 }
 
 function getHeader($name)
