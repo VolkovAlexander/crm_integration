@@ -41,6 +41,7 @@ try {
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta http-equiv="refresh" content="3">
 </head>
 <body>
 <div class="container">
@@ -106,12 +107,12 @@ try {
             </form>
         </div>
         <div class="col-md-9">
+            <iframe src="events.php" style="width: 100%; height: 780px" frameborder="no">
+            </iframe>
             <?php if(isset($_GET['logs'])): ?>
-            <iframe src="logs.php" style="width: 100%; height: 380px" frameborder="no">
-            </iframe>
+                <iframe src="logs.php" style="width: 100%; height: 780px" frameborder="no">
+                </iframe>
             <?php endif; ?>
-            <iframe src="events.php" style="width: 100%; height: 380px" frameborder="no">
-            </iframe>
         </div>
     </div>
 </div>
