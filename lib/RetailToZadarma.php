@@ -155,6 +155,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             'created_at' => strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))
         ]);
 
+        $this->Log->notice($this->Mysql->pdo()->lastInsertId());
+
         try {
             $internal_codes = CommonFunctions::nullableFromArray(
                 json_decode(
