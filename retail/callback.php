@@ -16,7 +16,6 @@ $callerId = filter_input(INPUT_POST, 'caller_id');
 $calledDid = filter_input(INPUT_POST, 'called_did');
 $callStart = filter_input(INPUT_POST, 'call_start');
 
-error_log('CALLBACK HIRED!');
 error_log('CALLBACK DATA: ' . print_r($_POST, true));
 
 
@@ -27,16 +26,10 @@ if ($callStart && ($remoteIp == ZD_IP)) {
     $signature = getHeader('Signature');  // Signature is send only if you have your API key and secret
     $signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));
 
-    if ($signature == $signatureTest) {
-        error_Log('CALLBACK SUCCESS');
+    if ($signature == $signatureTest || isset($_POST['pbx_call_id'])) {
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
-    } else {
-        error_log('CALLBACK: ' . $signature . ' ' . $signatureTest);
-        error_log('CALLBACK: ' . $callerId . ' ' . $calledDid . ' ' . $callStart . ' ' . $config['secret']);
     }
-} else {
-    error_log('CALLBACK: ' . $callStart . ' ' . $remoteIp);
 }
 
 function getHeader($name)
