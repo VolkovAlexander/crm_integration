@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a05f9f42-3e56-4d58-968a-579257b2928c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/make-call.php" afterPath="$PROJECT_DIR$/retail/make-call.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/retail/callback.php" afterPath="$PROJECT_DIR$/retail/callback.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -95,8 +95,8 @@
       <file leaf-file-name="callback.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/retail/callback.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="296">
-              <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+            <state relative-caret-position="404">
+              <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -179,8 +179,8 @@
         <option value="$PROJECT_DIR$/retail/events.php" />
         <option value="$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php" />
         <option value="$PROJECT_DIR$/lib/RetailToZadarma.php" />
-        <option value="$PROJECT_DIR$/retail/callback.php" />
         <option value="$PROJECT_DIR$/retail/make-call.php" />
+        <option value="$PROJECT_DIR$/retail/callback.php" />
       </list>
     </option>
   </component>
@@ -381,12 +381,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="16012000" />
+      <workItem from="1481523273267" duration="16258000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121061000" />
+    <option name="totallyTimeSpent" value="121307000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -796,8 +796,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/retail/callback.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state relative-caret-position="404">
+          <caret line="28" column="38" lean-forward="false" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
           <folding />
         </state>
       </provider>

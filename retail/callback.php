@@ -26,6 +26,7 @@ if ($callStart && ($remoteIp == ZD_IP)) {
     $signatureTest = base64_encode(hash_hmac('sha1', $callerId . $calledDid . $callStart, $config['secret']));
 
     if ($signature == $signatureTest) {
+        error_Log('CALLBACK SUCCESS');
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
     } else {
