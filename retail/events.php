@@ -3,7 +3,7 @@ require './../vendor/autoload.php';
 require './../lib/RetailToZadarma.php';
 
 $RetailToZadarma = new \lib\RetailToZadarma();
-$data = $RetailToZadarma->Mysql->table('retail')->select(['*']);
+$data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
 
 print_r($data);
 
@@ -28,11 +28,19 @@ print_r($data);
     <thead>
     <tr>
         <td class="col-date">Date</td>
-        <td>Code</td>
-        <td>Message</td>
+        <td>Status</td>
         <td>Additional</td>
     </tr>
     </thead>
     <tbody>
+        <?php if(!empty($data)): ?>
+            <?php foreach($data as $row): ?>
+                <tr>
+                    <td><?= date('d-M-y H:i', $row['created_at']) ?></td>
+                    <td><?= $row['status'] ?></td>
+                    <td><pre><?= print_r(json_encode($row['data'], true), true) ?></pre></td>
+                </tr>
+            <?php endforeach; ?>
+        <?php endif; ?>
     </tbody>
 </table>
