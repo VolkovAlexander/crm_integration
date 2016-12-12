@@ -153,8 +153,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         try {
             $event = CommonFunctions::nullableFromArray($params, 'event');
 
-            $this->Log->notice($event);
-
             switch ($event) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'caller_id');
@@ -201,11 +199,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 );
 
                 $this->validateCrmResponse($result);
-                $this->Log->notice('New call event recorded', [
-                    'type' => $type,
-                    'phone' => $phone,
-                    'code' => $codes,
-                ]);
             }
 
             $this->uploadCallsToCrm();
@@ -440,6 +433,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 ]);
 
                 $result = $this->cCrm->telephonyCallsUpload([$data]);
+
+                $this->Log->notice('Call upload', $result);
 
                 if ($result->isSuccessful()) {
                     $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([

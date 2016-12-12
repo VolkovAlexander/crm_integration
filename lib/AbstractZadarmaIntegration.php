@@ -82,8 +82,6 @@ class AbstractZadarmaIntegration
             ]);
 
             $this->validateZdResponse($result);
-
-            $this->Log->notice(sprintf('New output calling from %s to %s', $from, $to), json_decode($result, true));
         } catch (\Exception $e) {
             $this->Log->error(sprintf('Failed output calling from %s to %s', $from, $to), $e->getMessage());
         }
@@ -101,8 +99,6 @@ class AbstractZadarmaIntegration
     public function getCallRecord($call_id, $pbx_call_id, $lifetime = 5184000)
     {
         $result = null;
-
-        $this->Log->notice('Getting call record', ['call_id' => $call_id, 'pbx_call_id' => $pbx_call_id]);
 
         try {
             $response = $this->cZadarma->call('/v1/pbx/record/request/', [
