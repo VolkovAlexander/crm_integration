@@ -196,8 +196,7 @@ class AbstractZadarmaIntegration
         if (!empty($this->Mysql)) {
             try {
                 $this->Mysql->statement(sprintf("
-                    CREATE DATABASE IF NOT EXISTS crm_integration CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
-                    GRANT ALL PRIVILEGES ON crm_integration.* TO '%s'@'%' WITH GRANT OPTION;
+                    CREATE DATABASE IF NOT EXISTS %s CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
                 "), CommonFunctions::nullableFromArray($this->mysql_config, 'user'));
 
                 $config['database'] = 'crm_integration';
