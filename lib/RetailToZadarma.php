@@ -54,7 +54,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             (id INT NOT NULL AUTO_INCREMENT,
             client_id INT,
             zd_id VARCHAR(64) NOT NULL,
-            data VARCHAR(128),
+            data TEXT,
             status INT NOT NULL DEFAULT 0,
             created_at INT NOT NULL DEFAULT 0,
             updated_at INT NOT NULL DEFAULT 0,
