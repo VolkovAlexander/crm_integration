@@ -95,6 +95,8 @@ class AbstractZadarmaIntegration
     {
         $result = null;
 
+        $this->Log->notice('Getting call record', ['call_id' => $call_id, 'pbx_call_id' => $pbx_call_id]);
+
         try {
             $response = $this->cZadarma->call('/v1/pbx/record/request/', [
                 'call_id' => $call_id,

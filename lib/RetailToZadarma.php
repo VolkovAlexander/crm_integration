@@ -160,6 +160,10 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $code = CommonFunctions::nullableFromArray($params, 'internal');
                     $type = 'hangup';
 
+                    $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
+                    $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
+                    $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
+
                     if (in_array($code, $internal_codes)) {
                         /** @var \RetailCrm\Response\ApiResponse $result */
                         $result = $this->cCrm->telephonyCallEvent(
@@ -167,10 +171,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         );
 
                         if ($result->isSuccessful()) {
-                            $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
-                            $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
-                            $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
-
                             $result = $this->cCrm->telephonyCallsUpload([
                                 [
                                     'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
@@ -184,6 +184,19 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                                 ]
                             ]);
                         }
+                    } elseif(CommonFunctions::nullableFromArray($params, 'disposition') === 'cancel') {
+                        $result = $this->cCrm->telephonyCallsUpload([
+                            [
+                                'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
+                                'type' => 'in',
+                                'phone' => $phone,
+                                'code' => null,
+                                'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($params, 'disposition')),
+                                'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
+                                'externalId' => $pbx_call_id,
+                                'recordUrl' => $call_record_link
+                            ]
+                        ]);
                     }
                     break;
                 case self::ZD_CALLBACK_EVENT_OUT_START:
