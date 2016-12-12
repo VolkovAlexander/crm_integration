@@ -36,7 +36,7 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
                 <tr>
                     <td><?= date('d-M-y H:i', $Row->created_at) ?></td>
                     <td><?= $Row->status ?></td>
-                    <td><pre><?= $Row->data ?></pre></td>
+                    <td><pre><?= print_r(json_decode($Row->data, true), true) ?></pre></td>
                 </tr>
             <?php endforeach; ?>
         <?php endif; ?>
