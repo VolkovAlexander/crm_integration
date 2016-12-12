@@ -25,6 +25,12 @@ if ($callStart && ($remoteIp == ZD_IP)) {
 
     if ($signature == $signatureTest) {
         $RetailToZadarma = new \lib\RetailToZadarma();
+        $RetailToZadarma->Log->notice('New callback function hire', [
+            'callerId' => $callerId,
+            'callerDid' => $calledDid,
+            'callStart' => $callStart,
+            'secret' => $config['secret']
+        ]);
         $RetailToZadarma->sendCallEventToCrm($_POST);
     }
 }
