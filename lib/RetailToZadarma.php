@@ -432,6 +432,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     'recordUrl' => $call_record_link
                 ]);
 
+                $this->Log->notice('new call upload', $data);
+
                 $result = $this->cCrm->telephonyCallsUpload([$data]);
 
                 $this->Log->notice('Call upload', $result);
