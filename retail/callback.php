@@ -26,6 +26,13 @@ if ($callStart && ($remoteIp == ZD_IP)) {
     if ($signature == $signatureTest || isset($_POST['pbx_call_id'])) {
         $RetailToZadarma = new \lib\RetailToZadarma();
         $RetailToZadarma->sendCallEventToCrm($_POST);
+
+        echo json_encode(array(
+            'redirect' => 100,
+            'caller_name' => 'TestName'
+        ));
+
+        exit();
     }
 }
 
