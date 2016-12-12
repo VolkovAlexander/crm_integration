@@ -49,7 +49,7 @@ class AbstractZadarmaIntegration
         $this->Log = new Log($this->crm_name);
         $this->initMysqlClient();
 
-        if(is_array($this->zadarma_config) && is_array($this->crm_config)) {
+        if (is_array($this->zadarma_config) && is_array($this->crm_config)) {
             try {
                 $this->initZadarmaClient();
                 $this->initCrmClient();
@@ -195,7 +195,10 @@ class AbstractZadarmaIntegration
 
         if (!empty($this->Mysql)) {
             try {
-                $this->Mysql->statement("CREATE DATABASE IF NOT EXISTS crm_integration CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'");
+                $this->Mysql->statement(sprintf("
+                    CREATE DATABASE IF NOT EXISTS crm_integration CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
+                    GRANT ALL PRIVILEGES ON crm_integration.* TO '%s'@'%' WITH GRANT OPTION;
+                "), CommonFunctions::nullableFromArray($this->mysql_config, 'user'));
 
                 $config['database'] = 'crm_integration';
                 $connection = new \Pixie\Connection('mysql', $config);
