@@ -153,7 +153,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         try {
             $event = CommonFunctions::nullableFromArray($params, 'event');
 
-            switch($event) {
+            switch ($event) {
                 case self::ZD_CALLBACK_EVENT_START:
                     $phone = CommonFunctions::nullableFromArray($params, 'caller_id');
                     $code = CommonFunctions::nullableFromArray(CommonFunctions::nullableFromArray($this->cCrm->telephonyCallManager($phone, 0), 'manager'), 'code');
@@ -204,7 +204,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                 'code' => $codes,
             ]);
 
-            //$this->uploadCallsToCrm();
+            $this->uploadCallsToCrm();
         } catch (\Exception $e) {
             $this->Log->error('Can\'t send information about incoming call to crm', $e->getMessage());
         }
@@ -388,24 +388,62 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         return $result;
     }
 
+    /**
+     * Получение основной информации о закончившемся звонке
+     * @param $Call
+     * @return array
+     */
+    private function getTotalInfoAboutCall($Call)
+    {
+        $start_data = json_decode($Call->start_data, true);
+        $end_data = json_decode($Call->end_data, true);
+
+        $type = CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_START ? 'in' : (
+            CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? 'out' : null
+        );
+
+        $phone = CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_START ? CommonFunctions::nullableFromArray($end_data, 'caller_id') : (
+            CommonFunctions::nullableFromArray($start_data, 'event') === self::ZD_CALLBACK_EVENT_OUT_START ? CommonFunctions::nullableFromArray($end_data, 'destination') : null
+        );
+
+        return [
+            'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($end_data, 'call_start'))),
+            'type' => $type,
+            'phone' => $phone,
+            'code' => CommonFunctions::nullableFromArray($end_data, 'internal'),
+            'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($end_data, 'disposition')),
+            'duration' => CommonFunctions::nullableFromArray($end_data, 'duration'),
+            'externalId' => $Call->id,
+        ];
+    }
+
+    /**
+     * Отправка всех данных по законченным звонкам в CRM
+     */
     private function uploadCallsToCrm()
     {
-        $pbx_call_id = CommonFunctions::nullableFromArray($params, 'pbx_call_id');
-        $call_id = CommonFunctions::nullableFromArray($params, 'call_id_with_rec');
-        $call_record_link = $this->getCallRecord($call_id, $pbx_call_id);
+        $calls_to_upload = $this->Mysql->table('retail')->select([
+            'status' => self::CALL_STATUS_FINISHED
+        ])->get();
 
-        $result = $this->cCrm->telephonyCallsUpload([
-            [
-                'date' => date('Y-m-d H:i:s', strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))),
-                'type' => 'out',
-                'phone' => $phone,
-                'code' => $code,
-                'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($params, 'disposition')),
-                'duration' => CommonFunctions::nullableFromArray($params, 'duration'),
-                'externalId' => $pbx_call_id,
-                'recordUrl' => $call_record_link
-            ]
-        ]);
+        if (!empty($calls_to_upload)) {
+            foreach ($calls_to_upload as $Call) {
+                $pbx_call_id = $Call->call_id;
+                $call_record_link = $this->getCallRecord(null, $pbx_call_id);
+
+                $data = array_merge($this->getTotalInfoAboutCall($Call), [
+                    'recordUrl' => $call_record_link
+                ]);
+
+                $result = $this->cCrm->telephonyCallsUpload([$data]);
+
+                if($result->isSuccessful()) {
+                    $this->Mysql->table('retail')->where('call_id', $pbx_call_id)->update([
+                        'status' => self::CALL_STATUS_SENT
+                    ]);
+                }
+            }
+        }
     }
 
     const CALL_STATUS_STARTED = 0;

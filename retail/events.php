@@ -17,6 +17,18 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
         width: 100%;
     }
 
+    tr.status-0 {
+        background-color: lightblue;
+    }
+
+    tr.status-1 {
+        background-color: aqua
+    }
+
+    tr.status-2 {
+        background-color: lightgreen;
+    }
+
     td {
         padding: 1px 10px;
     }
@@ -24,17 +36,21 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
 
 <table>
     <tbody>
-        <?php if(!empty($data)): ?>
-            <?php foreach($data as $Row): ?>
-                <tr>
-                    <td colspan="3"><?= $Row->call_id ?></td>
-                </tr>
-                <tr>
-                    <td><?= date('H:i', $Row->created_at) ?></td>
-                    <td><pre><?= print_r(json_decode($Row->start_data, true), true) ?></pre></td>
-                    <td><pre><?= print_r(json_decode($Row->end_data, true), true) ?></pre></td>
-                </tr>
-            <?php endforeach; ?>
-        <?php endif; ?>
+    <?php if (!empty($data)): ?>
+        <?php foreach ($data as $Row): ?>
+            <tr class="status-<?= $Row->status ?>">
+                <td colspan="3"><?= $Row->call_id ?></td>
+            </tr>
+            <tr>
+                <td><?= date('H:i', $Row->created_at) ?></td>
+                <td>
+                    <pre><?= print_r(json_decode($Row->start_data, true), true) ?></pre>
+                </td>
+                <td>
+                    <pre><?= print_r(json_decode($Row->end_data, true), true) ?></pre>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    <?php endif; ?>
     </tbody>
 </table>
