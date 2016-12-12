@@ -30,6 +30,7 @@ if ($callStart && ($remoteIp == ZD_IP)) {
         $RetailToZadarma->sendCallEventToCrm($_POST);
     } else {
         error_log('CALLBACK: ' . $signature . ' ' . $signatureTest);
+        error_log('CALLBACK: ' . $callerId . ' ' . $calledDid . ' ' . $callStart . ' ' . $config['secret']);
     }
 } else {
     error_log('CALLBACK: ' . $callStart . ' ' . $remoteIp);
