@@ -26,6 +26,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     public $cCrm = null;
     /** @var \Zadarma_API\Client|null $cZadarma */
     public $cZadarma = null;
+    /** @var \Pixie\QueryBuilder\QueryBuilderHandler $cMysql */
+    public $Mysql = null;
 
     protected function initCrmClient()
     {
@@ -34,6 +36,28 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
         /** @var \RetailCrm\ApiClient cCrm */
         $this->cCrm = new \RetailCrm\ApiClient($url, $key);
+    }
+
+    protected function initMysqlClient()
+    {
+        parent::initMysqlClient();
+
+        try {
+            $this->Mysql->statement("
+            CREATE TABLE IF NOT EXISTS crm_integration.retail
+            (id INT NOT NULL AUTO_INCREMENT,
+            client_id INT,
+            zd_id VARCHAR(64) NOT NULL,
+            data VARCHAR(128),
+            status INT NOT NULL DEFAULT 0,
+            created_at INT NOT NULL DEFAULT 0,
+            updated_at INT NOT NULL DEFAULT 0,
+            PRIMARY KEY (id)) ENGINE=InnoDB DEFAULT CHARSET=utf8
+        ");
+        } catch (\PDOException $e) {
+            $this->Log->error('Can\'t create table', $e->getMessage());
+        }
+
     }
 
     /**
@@ -117,7 +141,13 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $code = null;
         $type = null;
 
-        $this->Log->notice('New call event', $params);
+        $this->Mysql->table('retail')->insert([
+            'client_id' => CommonFunctions::nullableFromArray($this->crm_config, 'username'),
+            'zd_id' => CommonFunctions::nullableFromArray($params, 'pbx_call_id'),
+            'status' => 0,
+            'data' => json_encode($params),
+            'created_at' => strtotime(CommonFunctions::nullableFromArray($params, 'call_start'))
+        ]);
 
         try {
             $internal_codes = CommonFunctions::nullableFromArray(

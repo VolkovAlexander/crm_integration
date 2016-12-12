@@ -19,6 +19,7 @@ class AbstractZadarmaIntegration
 
     protected $zadarma_config = [];
     protected $crm_config = [];
+    protected $mysql_config = [];
 
     public $cCrm = null;
     /** @var \Zadarma_API\Client|null */
@@ -27,6 +28,9 @@ class AbstractZadarmaIntegration
     /** @var  Log $Log */
     public $Log;
 
+    /** @var \Pixie\QueryBuilder\QueryBuilderHandler $cMysql */
+    public $Mysql = null;
+
     /**
      * @inheritdoc
      */
@@ -34,19 +38,22 @@ class AbstractZadarmaIntegration
     {
         define('ROOT_DIR', sprintf('%s/./../', __DIR__));
 
-        $this->Log = new Log($this->crm_name);
-
         $this->zadarma_config = include ROOT_DIR . '/config/zadarma.php';
+        $this->mysql_config = include ROOT_DIR . '/config/mysql.php';
         $crm_config_file = str_replace(['/', '\\'], DIRECTORY_SEPARATOR, sprintf('%s/config/%s.php', ROOT_DIR, $this->crm_name));
 
         if (file_exists($crm_config_file)) {
             $this->crm_config = include $crm_config_file;
         } else throw new \Exception(sprintf('Configuration file for "%s" not found', $this->crm_name));
 
+        $this->Log = new Log($this->crm_name);
+        $this->initMysqlClient();
+
         if(is_array($this->zadarma_config) && is_array($this->crm_config)) {
             try {
                 $this->initZadarmaClient();
                 $this->initCrmClient();
+
             } catch (\Exception $e) {
                 $this->Log->error('Can\'t initialize api-clients');
             }
@@ -169,6 +176,34 @@ class AbstractZadarmaIntegration
      */
     protected function initCrmClient()
     {
+    }
+
+    /**
+     * Инициализация клиента на доступ к Mysql
+     */
+    protected function initMysqlClient()
+    {
+        $config = array(
+            'driver' => 'mysql',
+            'host' => CommonFunctions::nullableFromArray($this->mysql_config, 'host'),
+            'username' => CommonFunctions::nullableFromArray($this->mysql_config, 'user'),
+            'password' => CommonFunctions::nullableFromArray($this->mysql_config, 'password'),
+        );
+
+        $connection = new \Pixie\Connection('mysql', $config);
+        $this->Mysql = new \Pixie\QueryBuilder\QueryBuilderHandler($connection);
+
+        if (!empty($this->Mysql)) {
+            try {
+                $this->Mysql->statement("CREATE DATABASE IF NOT EXISTS crm_integration CHARACTER SET 'utf8' COLLATE 'utf8_general_ci'");
+
+                $config['database'] = 'crm_integration';
+                $connection = new \Pixie\Connection('mysql', $config);
+                $this->Mysql = new \Pixie\QueryBuilder\QueryBuilderHandler($connection);
+            } catch (\PDOException $e) {
+                $this->Log->error('Can\'t connect to mysql db', $e->getMessage());
+            }
+        }
     }
 
     const ZD_CALLBACK_EVENT_START = 'NOTIFY_START';
