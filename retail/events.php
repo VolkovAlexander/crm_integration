@@ -23,20 +23,14 @@ $data = $RetailToZadarma->Mysql->table('retail')->select('*')->get();
 </style>
 
 <table>
-    <thead>
-    <tr>
-        <td class="col-date">Date</td>
-        <td>Status</td>
-        <td>Start</td>
-        <td>End</td>
-    </tr>
-    </thead>
     <tbody>
         <?php if(!empty($data)): ?>
             <?php foreach($data as $Row): ?>
                 <tr>
-                    <td><?= date('d-M-y H:i', $Row->created_at) ?></td>
-                    <td><?= $Row->status ?></td>
+                    <td colspan="3"><?= $Row->call_id ?></td>
+                </tr>
+                <tr>
+                    <td><?= date('H:i', $Row->created_at) ?></td>
                     <td><pre><?= print_r(json_decode($Row->start_data, true), true) ?></pre></td>
                     <td><pre><?= print_r(json_decode($Row->end_data, true), true) ?></pre></td>
                 </tr>
