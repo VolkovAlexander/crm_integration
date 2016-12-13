@@ -55,13 +55,13 @@
       <file leaf-file-name="AbstractZadarmaIntegration.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="111" column="70" lean-forward="false" selection-start-line="111" selection-start-column="70" selection-end-line="111" selection-end-column="70" />
+            <state relative-caret-position="471">
+              <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
               <folding>
                 <element signature="e#6#71#0#PHP" expanded="true" />
                 <element signature="e#651#1627#0#PHP" expanded="false" />
                 <element signature="e#1838#2418#0#PHP" expanded="false" />
-                <element signature="e#3741#4010#0#PHP" expanded="false" />
+                <element signature="e#3944#4213#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -398,12 +398,12 @@
       <workItem from="1481114459295" duration="23506000" />
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
-      <workItem from="1481523273267" duration="21211000" />
+      <workItem from="1481523273267" duration="21332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126260000" />
+    <option name="totallyTimeSpent" value="126381000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -499,7 +499,7 @@
             <element signature="e#6#71#0#PHP" expanded="true" />
             <element signature="e#651#1627#0#PHP" expanded="false" />
             <element signature="e#1838#2418#0#PHP" expanded="false" />
-            <element signature="e#3741#4010#0#PHP" expanded="false" />
+            <element signature="e#3944#4213#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -534,7 +534,7 @@
             <element signature="e#6#71#0#PHP" expanded="true" />
             <element signature="e#651#1627#0#PHP" expanded="false" />
             <element signature="e#1838#2418#0#PHP" expanded="false" />
-            <element signature="e#3741#4010#0#PHP" expanded="false" />
+            <element signature="e#3944#4213#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -831,13 +831,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/AbstractZadarmaIntegration.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="111" column="70" lean-forward="false" selection-start-line="111" selection-start-column="70" selection-end-line="111" selection-end-column="70" />
+        <state relative-caret-position="471">
+          <caret line="108" column="0" lean-forward="true" selection-start-line="108" selection-start-column="0" selection-end-line="108" selection-end-column="0" />
           <folding>
             <element signature="e#6#71#0#PHP" expanded="true" />
             <element signature="e#651#1627#0#PHP" expanded="false" />
             <element signature="e#1838#2418#0#PHP" expanded="false" />
-            <element signature="e#3741#4010#0#PHP" expanded="false" />
+            <element signature="e#3944#4213#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

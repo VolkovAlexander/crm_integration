@@ -107,9 +107,14 @@ class AbstractZadarmaIntegration
                 'lifetime' => $lifetime
             ], 'get');
 
-            $this->validateZdResponse($response);
-
+            $this->Log->notice('New call record response', [
+                'call_id' => $call_id,
+                'pbx_call_id' => $pbx_call_id,
+                'lifetime' => $lifetime
+            ]);
             $this->Log->notice('New call record response', $response);
+
+            $this->validateZdResponse($response);
 
             $response = json_decode($response, true);
             if (!empty($response) && $response['status'] === 'success') {
