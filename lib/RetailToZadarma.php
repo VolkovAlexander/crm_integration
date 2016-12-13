@@ -458,6 +458,15 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         }
     }
 
+    /**
+     * Получение имени пользователя в Crm
+     * @return string|null
+     */
+    public function getClientUsername()
+    {
+        return CommonFunctions::nullableFromArray($this->crm_config, 'username');
+    }
+
     const CALL_STATUS_STARTED = 0;
     const CALL_STATUS_FINISHED = 1;
     const CALL_STATUS_SENT = 2;

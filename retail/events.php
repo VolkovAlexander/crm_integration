@@ -3,7 +3,12 @@ require './../vendor/autoload.php';
 require './../lib/RetailToZadarma.php';
 
 $RetailToZadarma = new \lib\RetailToZadarma();
-$data = $RetailToZadarma->Mysql->table('retail')->select('*')->orderBy('id', 'DESC')->get();
+$data = $RetailToZadarma->Mysql
+    ->table('retail')
+    ->select('*')
+    ->where('client_id', $RetailToZadarma->getClientUsername())
+    ->orderBy('id', 'DESC')
+    ->get();
 
 ?>
 <meta http-equiv="refresh" content="5">
