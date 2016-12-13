@@ -175,6 +175,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
 
                     $codes = [$code];
 
+                    $this->Log->notice('redirect to empty manager', $code);
+
                     /** Необходимо для верного редиректа внутри АТС Zadarma */
                     echo json_encode(array(
                         'redirect' => $code
