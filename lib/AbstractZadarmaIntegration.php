@@ -133,6 +133,10 @@ class AbstractZadarmaIntegration
                 }
             } catch (\Exception $e) {
                 $this->Log->error('Can\'t get call record', $e->getMessage());
+                sleep(5);
+
+                $try_counters++;
+                $try_finished = ($try_counters === $try_max_count);
             }
         }
 
