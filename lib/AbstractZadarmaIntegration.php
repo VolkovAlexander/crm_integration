@@ -100,28 +100,39 @@ class AbstractZadarmaIntegration
     {
         $result = null;
 
-        try {
-            $response = $this->cZadarma->call('/v1/pbx/record/request/', [
-                'call_id' => $call_id,
-                'pbx_call_id' => $pbx_call_id,
-                'lifetime' => $lifetime
-            ], 'get');
+        $try_finished = false;
+        $try_counters = 0;
+        $try_max_count = 4;
 
-            $this->Log->notice('New call record response', [
-                'call_id' => $call_id,
-                'pbx_call_id' => $pbx_call_id,
-                'lifetime' => $lifetime
-            ]);
-            $this->Log->notice('New call record response', $response);
+        while (!$try_finished) {
+            try {
+                $response = $this->cZadarma->call('/v1/pbx/record/request/', [
+                    'call_id' => $call_id,
+                    'pbx_call_id' => $pbx_call_id,
+                    'lifetime' => $lifetime
+                ], 'get');
 
-            $this->validateZdResponse($response);
+                $this->Log->notice('New call record response', [
+                    'call_id' => $call_id,
+                    'pbx_call_id' => $pbx_call_id,
+                    'lifetime' => $lifetime
+                ]);
+                $this->Log->notice('New call record response', $response);
 
-            $response = json_decode($response, true);
-            if (!empty($response) && $response['status'] === 'success') {
-                $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
+                $this->validateZdResponse($response);
+
+                $response = json_decode($response, true);
+                if (!empty($response) && $response['status'] === 'success') {
+                    $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
+                } else {
+                    sleep(5);
+
+                    $try_counters++;
+                    $try_finished = ($try_counters === $try_max_count);
+                }
+            } catch (\Exception $e) {
+                $this->Log->error('Can\'t get call record', $e->getMessage());
             }
-        } catch (\Exception $e) {
-            $this->Log->error('Can\'t get call record', $e->getMessage());
         }
 
 
