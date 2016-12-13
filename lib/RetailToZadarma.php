@@ -421,6 +421,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
             'result' => $this->convertZdDisposition(CommonFunctions::nullableFromArray($end_data, 'disposition')),
             'duration' => CommonFunctions::nullableFromArray($end_data, 'duration'),
             'externalId' => $Call->id,
+            'record_call_id' => CommonFunctions::nullableFromArray($end_data, 'call_id_with_rec')
         ];
     }
 
@@ -437,7 +438,8 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         if (!empty($calls_to_upload)) {
             foreach ($calls_to_upload as $Call) {
                 $pbx_call_id = $Call->call_id;
-                $call_record_link = $this->getCallRecord(null, $pbx_call_id);
+                $record_call_id = CommonFunctions::nullableFromArray($this->getTotalInfoAboutCall($Call), 'record_call_id');
+                $call_record_link = $this->getCallRecord($record_call_id, $pbx_call_id);
 
                 $data = array_merge($this->getTotalInfoAboutCall($Call), [
                     'recordUrl' => $call_record_link
