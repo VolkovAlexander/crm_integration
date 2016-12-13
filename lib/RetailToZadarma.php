@@ -148,8 +148,6 @@ class RetailToZadarma extends AbstractZadarmaIntegration
         $codes = null;
         $type = null;
 
-        $this->Log->notice('new call event', $params);
-
         $this->writeInfoAboutCallToDb($params);
 
         try {
