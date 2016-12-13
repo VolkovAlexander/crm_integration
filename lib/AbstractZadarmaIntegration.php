@@ -109,6 +109,8 @@ class AbstractZadarmaIntegration
 
             $this->validateZdResponse($response);
 
+            $this->Log->notice('New call record response', $response);
+
             $response = json_decode($response, true);
             if (!empty($response) && $response['status'] === 'success') {
                 $result = (isset($response['links']) && count($response['links']) === 1) ? $response['links'][0] : null;
