@@ -110,6 +110,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                     $is_already_registered = true;
                     $result = true;
                 }
+                $this->Log->notice('check for old', $response);
             } catch (\Exception $e) {
                 $this->Log->error("Can't check crm registration: ", $e->getMessage());
             }
@@ -124,6 +125,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
                         $this->zd_image,
                         [], [], true, true, true, true, false
                     );
+                    $this->Log->notice('check for new', $response);
                     $this->validateCrmResponse($response);
                     $result = true;
                 } catch (\RetailCrm\Exception\CurlException $e) {
