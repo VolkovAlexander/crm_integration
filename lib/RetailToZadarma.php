@@ -19,7 +19,7 @@ class RetailToZadarma extends AbstractZadarmaIntegration
     protected $crm_name = 'retail';
 
     protected $zd_name = 'zadarma';
-    protected $make_call_url = 'https://pw_vo010a.sipdc.net/crm_integration/retail/make-call.php';
+    protected $make_call_url = 'https://pw-vo010a.sipdc.net/crm_integration/retail/make-call.php';
     protected $zd_image = 'http://www.clker.com/cliparts/O/n/v/t/d/3/ringing-red-telephone.svg';
 
     /** @var \RetailCrm\ApiClient|null $cCrm */
