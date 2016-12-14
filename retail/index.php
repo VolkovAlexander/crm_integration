@@ -26,20 +26,11 @@ $zd_config = include './../config/zadarma.php';
 $testClient = new \lib\RetailToZadarma();
 $is_connection_success = false;
 
-echo '<pre>';
-
-print_r($testClient);
-
 try {
     $testClient->registrateSipInCrm();
     $is_connection_success = $testClient->validateClients();
-
-    print_r($testClient);
-
 } catch (Exception $e) {
 }
-
-echo '</pre>';
 
 ?>
 

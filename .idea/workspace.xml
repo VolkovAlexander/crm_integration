@@ -28,36 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="RetailToZadarma.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-              <folding>
-                <element signature="e#6#66#0#PHP" expanded="true" />
-                <element signature="e#830#1137#0#PHP" expanded="false" />
-                <element signature="e#1178#1960#0#PHP" expanded="false" />
-                <element signature="e#2001#2706#0#PHP" expanded="false" />
-                <element signature="e#2801#4116#0#PHP" expanded="false" />
-                <element signature="e#4266#7282#0#PHP" expanded="false" />
-                <element signature="e#7448#8743#0#PHP" expanded="false" />
-                <element signature="e#8866#9057#0#PHP" expanded="false" />
-                <element signature="e#9196#10604#0#PHP" expanded="false" />
-                <element signature="e#10720#11528#0#PHP" expanded="false" />
-                <element signature="e#11664#13161#0#PHP" expanded="false" />
-                <element signature="e#13284#14685#0#PHP" expanded="false" />
-                <element signature="e#14764#16015#0#PHP" expanded="false" />
-                <marker date="1481709899804" expanded="true" signature="1329:1756" ph="CREATE TABLE... IF" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/retail/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+            <state relative-caret-position="486">
+              <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
               <folding />
             </state>
           </provider>
@@ -341,12 +316,12 @@
       <workItem from="1481520966979" duration="2253000" />
       <workItem from="1481523236181" duration="12000" />
       <workItem from="1481523273267" duration="22767000" />
-      <workItem from="1481627480116" duration="3664000" />
+      <workItem from="1481627480116" duration="3960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131480000" />
+    <option name="totallyTimeSpent" value="131776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -454,7 +429,6 @@
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -490,7 +464,6 @@
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -513,7 +486,6 @@
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -536,7 +508,6 @@
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -559,7 +530,6 @@
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -753,14 +723,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/RetailToZadarma.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        <state relative-caret-position="28">
+          <caret line="99" column="20" lean-forward="false" selection-start-line="99" selection-start-column="20" selection-end-line="99" selection-end-column="20" />
           <folding>
             <element signature="e#6#66#0#PHP" expanded="true" />
             <element signature="e#830#1137#0#PHP" expanded="false" />
             <element signature="e#1178#1960#0#PHP" expanded="false" />
             <element signature="e#2001#2706#0#PHP" expanded="false" />
-            <element signature="e#2801#4116#0#PHP" expanded="false" />
             <element signature="e#4266#7282#0#PHP" expanded="false" />
             <element signature="e#7448#8743#0#PHP" expanded="false" />
             <element signature="e#8866#9057#0#PHP" expanded="false" />
@@ -776,8 +745,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/retail/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="25" lean-forward="false" selection-start-line="36" selection-start-column="25" selection-end-line="36" selection-end-column="25" />
+        <state relative-caret-position="486">
+          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="27" selection-end-line="29" selection-end-column="27" />
           <folding />
         </state>
       </provider>
