@@ -1,0 +1,1 @@
+<?php return [ 'key' => '086aa1752eb15c6a28af', 'secret' => 'd9aaf6e364a050f5c8d2'];

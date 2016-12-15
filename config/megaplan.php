@@ -1,0 +1,1 @@
+<?php return [ 'host' => 'zdcrm.megaplan.ru', 'login' => 'volkkb+megaplan@gmail.com', 'password' => '69d5C308' ];

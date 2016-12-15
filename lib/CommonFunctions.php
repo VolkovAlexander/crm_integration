@@ -27,4 +27,12 @@ class CommonFunctions
         );
         @file_put_contents('./../config/retail.php', $new_config_data);
     }
+
+    public static function saveMegaplanConfigToFile($host, $login, $password)
+    {
+        $new_config_data = sprintf('<?php return [ \'host\' => \'%s\', \'login\' => \'%s\', \'password\' => \'%s\' ];',
+            addslashes($host), addslashes($login), addslashes($password)
+        );
+        @file_put_contents('./../config/megaplan.php', $new_config_data);
+    }
 }
